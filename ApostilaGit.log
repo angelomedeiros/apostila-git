@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400) (preloaded format=pdflatex 2017.8.9)  23 AUG 2017 19:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400) (preloaded format=pdflatex 2017.8.9)  23 AUG 2017 19:56
 entering extended mode
 **./ApostilaGit.tex
 (ApostilaGit.tex
@@ -1348,7 +1348,7 @@ AED: lastpage setting LastPage
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.428 \end{document}
+l.429 \end{document}
                      <./feature-merges.png>]
 \tf@lof=\write5
 \openout5 = `ApostilaGit.lof'.
@@ -1356,22 +1356,22 @@ l.428 \end{document}
 \tf@toc=\write6
 \openout6 = `ApostilaGit.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 428.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 428.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 429.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 429.
  (ApostilaGit.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 428.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 428.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 429.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 429.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 428.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 429.
  ) 
 Here is how much of TeX's memory you used:
- 14110 strings out of 495203
- 207299 string characters out of 3180893
+ 14113 strings out of 495203
+ 207347 string characters out of 3180893
  456647 words of memory out of 3000000
- 17033 multiletter control sequences out of 15000+200000
+ 17036 multiletter control sequences out of 15000+200000
  71647 words of font info for 105 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  42i,13n,38p,2023b,473s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1382,7 +1382,7 @@ hare/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public
 exmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/l
 mss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texm
 f/fonts/type1/public/lm/lmsso12.pfb>
-Output written on ApostilaGit.pdf (11 pages, 427628 bytes).
+Output written on ApostilaGit.pdf (11 pages, 427761 bytes).
 PDF statistics:
  198 PDF objects out of 1000 (max. 8388607)
  42 named destinations out of 1000 (max. 500000)
