@@ -10,4 +10,4 @@
 \contentsline {subsection}{\numberline {2.1.1}O \textit {branch} \textit {master}}{8}{subsection.2.1.1}
 \contentsline {subsection}{\numberline {2.1.2}O \textit {branch develop}}{8}{subsection.2.1.2}
 \contentsline {subsection}{\numberline {2.1.3}O \textit {branch} \textit {feature}}{9}{subsection.2.1.3}
-\contentsline {subsection}{\numberline {2.1.4}Releases}{10}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {2.1.4}O \textit {branch release}}{10}{subsection.2.1.4}
