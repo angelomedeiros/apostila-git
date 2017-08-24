@@ -315,15 +315,15 @@ O \textit{git-flow}  é uma extensão do \textit{git} para auxiliar o controle d
 Você pode aplicar a metodologia do \textit{git-flow}  sem a necessidade de ter ele instalado, usando apenas comandos nativos do \textit{git}. 
 
 \chapter{A estratégia de ramificação}
-A estratégia de ramificação assemelha-se muito a estruta de uma árvore, por isso alguns comandos do \textit{git} usam opções como \textit{branch}, que significa ramo ou galho, ferramentas como o \textit{SourceTree} que serve para visualizar toda a ramificação do projeto em forma de grafos (a título de informação, \textit{tree} significa árvore).
+A estratégia de ramificação assemelha-se muito a estruta de uma árvore, por isso alguns comandos do \textit{git} usam opções como \textit{branch}(que significa ramo ou galho), ferramentas como o \textit{SourceTree} que serve para visualizar toda a ramificação do projeto em forma de grafos (a título de informação, \textit{tree} significa árvore).
 
 A estratégia que está representada na figura \ref{estrategia}, já é algo que grandes e pequenas empresas usam a bastante tempo. Explicarei como ela é construída, como iremos trabalhar em cima dessa estratégia usando o \textit{git}, e como usar a poderosa extensão do \textit{git}, o \textit{\textit{git-flow}}, para facilitar ainda mais nosso trabalho. 
 
 
- \begin{figure}[H]
+ \begin{figure}[h]
  	\caption{\label{estrategia}Estratégia de ramificação}
  	\begin{center}
- 		\includegraphics[width=0.55\linewidth]{estrategia}
+ 		\includegraphics[width=0.85\linewidth]{estrategia}
  	\end{center}
  	\legend{Fonte: (http://nvie.com/posts/a-successful-git-branching-model/)}
  \end{figure}
@@ -339,16 +339,16 @@ Os ramos principais são os ramos \textit{master} e o \textit{develop}. E os ram
 
 \subsection{O \textit{branch} \textit{master}}
 
-O ramo \textit{master} é o ramo que irá abrigar os códigos em suas versões mais estáveis. É o ramo que dará origem a aplicação final. Em algum momento do desenvolvimento todos os códigos produzidos em outros ramos farão um \textit{merge} (ato de mesclar os ramos, colocar os arquivos de um \textit{branch} em outro) com o \textit{branch master}, de forma direta ou indireta.
+O ramo \textit{master} é o ramo que irá abrigar os códigos em suas versões mais estáveis, esse é o branch de produção. É o ramo que dará origem a aplicação final. Em algum momento do desenvolvimento todos os códigos produzidos em outros ramos farão um \textit{merge}(ato de mesclar os ramos, colocar os arquivos de um \textit{branch} em outro) com o \textit{branch master}, de forma direta ou indireta.
 
 \subsection{O \textit{branch develop}}
 
-Este ramo será responsável por conter os códigos em nível de desenvolvimento para o próximo \textit{deploy} (significa implementar, mas pode mudar de significado de acordo com o contexto). Lembre-se que os códigos não serão criados nesse \textit{branch}, esse é responsável apenas em abrigar os códigos que estão em desenvolvimento. Após os códigos serem devidamente testados, o \textit{branch develop} fará um merge com o \textit{branch master}, isso se nem um \textit{bug} for encontrado no processo de testes, esse processo está representado na figura \ref{develop}. Se o código aprensentar \textit{bug} será criado outro branch a partir do \textit{branch develop} para a correção dos \textit{bugs} e posteriormente mesclado com o \textit{branch master}.
+Este ramo será responsável por conter os códigos em nível de desenvolvimento para o próximo \textit{deploy}(significa implementar, mas pode mudar de significado de acordo com o contexto). Lembre-se que os códigos não serão criados nesse \textit{branch}, esse é responsável apenas em abrigar os códigos que estão em desenvolvimento. Após os códigos serem devidamente testados, o \textit{branch develop} fará um merge com o \textit{branch master}, isso se nem um \textit{bug} for encontrado no processo de testes, esse processo está representado na figura \ref{develop}. Se o código aprensentar \textit{bug} será criado outro branch a partir do \textit{branch develop} para a correção dos \textit{bugs} e posteriormente mesclado com o \textit{branch master}.
 
-\begin{figure}[H]
-	\caption{\label{develop}O ramo \textit{develop}}
+\begin{figure}[h]
+	\caption{\label{develop}O \textit{branch} \textit{develop}}
 	\begin{center}
-		\includegraphics[width=0.3\linewidth]{develop}
+		\includegraphics[width=0.6\linewidth]{develop}
 	\end{center}
 	\legend{Fonte: (http://nvie.com/posts/a-successful-git-branching-model/)}
 \end{figure}
@@ -359,33 +359,56 @@ Os branches \textit{master} e \textit{develop}, possuem vida infinita, ou seja, 
 
 O branch feature representado na figura \ref{feature}, será utlizado sempre que uma nova funcionalidade precisar ser criada. Ele sempre será criado a partir do\textit{ branch develop} e finalizado no \textit{branch develop}, independente em qual ramo você esteja, isso se você estiver utlizando o \textit{git-flow}.
 
-Ao contrário do ramo \textit{master} e \textit{develop}, o ramo \textit{feature} pode ser criado múltiplas vezes, uma para cada nova funcionalidade. Esse branch possui como prefixo \textit{feature/*}, onde o asterisco (*) será substituido pelo nome do "sub-ramo" \ digamos assim, por exemplo, \textit{feature/cadastrodeclientes}, \textit{feature/teladelogin}.
+Ao contrário do ramo \textit{master} e \textit{develop}, o ramo \textit{feature} pode ser criado múltiplas vezes, uma para cada nova funcionalidade. Esse branch possui como prefixo \textit{feature/*}, onde o asterisco(*) será substituido pelo nome do "sub-ramo" \ digamos assim, por exemplo, \textit{feature/cadastrodeclientes}, \textit{feature/teladelogin}.
 
-\begin{figure}[H]
-	\caption{\label{feature}O ramo \textit{feature}}
+\begin{figure}[h]
+	\caption{\label{feature}O \textit{branch} \textit{feature}}
 	\begin{center}
-		\includegraphics[width=0.2\linewidth]{feature}
+		\includegraphics[width=0.26\linewidth]{feature}
 	\end{center}
 	\legend{Fonte: (http://nvie.com/posts/a-successful-git-branching-model/)}
 \end{figure}
 
 
-São duas as principais maneiras de mesclar branches, figura \ref{feature-merges}. A primeira é fazendo a mesclagem criando um novo \textit{commit} com as alterações dentro do ramo \textit{develop}, sem adicionar os \textit{commits} criados durante o desenvolvimento do ramo feature e, a outra é adicionando os \textit{commits} criados dentro do ramo feature dentro do ramo develop. Novamente, esse proceso ficará mais claro durante a prática.
+São duas as principais maneiras de mesclar branches, figura \ref{feature-merges}. A primeira é fazendo a mesclagem criando um novo \textit{commit} com as alterações dentro do ramo \textit{develop}, sem adicionar os \textit{commits} criados durante o desenvolvimento do ramo feature e, a outra é adicionando os \textit{commits} criados no ramo \textit{feature} dentro do ramo \textit{develop} e, mais um novo \textit{commit} indicando a mesclagem, o git-flow usa como padrão esse último. Novamente, esse proceso ficará mais claro durante a prática.
 
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\caption{\label{feature-merges}Tipos de merges}
 	\begin{center}
-		\includegraphics[width=0.6\linewidth]{feature-merges}
+		\includegraphics[width=0.8\linewidth]{feature-merges}
 	\end{center}
 	\legend{Fonte: (http://nvie.com/posts/a-successful-git-branching-model/)}
 \end{figure}
 
-\subsection{Releases}
+\subsection{O \textit{branch release}}
 
-Esse
+Esse branch é o ramo intermediário entre o \textit{develop} e o \textit{master}. O objetivo desse branch é a criação de tags(são os números que indicam a versão da aplicação, 1.0.0, por exemplo). Ele inicia no \textit{branch develop} e termina no \textit{branch master} e no \textit{develop}. Você deve está se perguntando porquê um \textit{branch} que inicia-se no \textit{develop} tem que terminar no \textit{develop}. Isso acontece porquê o \textit{branch} \textit{develop} tem que ter a mesma \textit{tag} do \textit{branch master}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+O prefixo usado pelo \textit{branch release} é \textit{release/*}\ , onde o asterisco(*) deve ser substituido pela tag da \textit{realese}, por exemplo, \textit{release/0.1.0}. Mais na frente iremos aprender um conjunto de regras para a criação dessas tags, conhecido como versionamento semântico.
+
+Sempre quando falo que um branch "termina"\ ou "finaliza", \ me refiro a mesclagem de um branch em outro, usado por padrão pelo git-flow.
+
+\subsection{Os \textit{branches hotfixes} e \textit{bugfixes}}
+
+O \textit{branch hotfix} e \textit{bugfix}, tem o objetivo de correção de erros. A diferença entre eles é onde cada um é inicializado. 
+
+Se o \textit{bug} for encotrado no ramo de produção(\textit{branch master}), um \textit{branch hotfix}, ver figura \ref{hotfix}, deve ser criado para tratar o erro a partir do ramo \textit{master}. Após a correção do erro, uma nova \textit{tag} será criada automaticamente e, o \textit{branch hotfix} será mesclado com o ramo \textit{master} e também ao ramo \textit{develop} para que esse não apresente o erro em futuras versões.
+
+Análogo ao \textit{branch release}, o prefixo do \textit{branch hotfix} é \textit{hotfix/*}\ , onde o asterisco(*) deve ser substituido pela nova tag, por exemplo, \textit{hotfix/0.1.1}.
+
+\begin{figure}[h]
+	\caption{\label{hotfix}O \textit{branch hotfix}}
+	\begin{center}
+		\includegraphics[width=0.6\linewidth]{hotfix}
+	\end{center}
+	\legend{Fonte: (http://nvie.com/posts/a-successful-git-branching-model/)}
+\end{figure}
+
+Já o \textit{branch bugfix}, ele deve ser criado quando um \textit{bug} é encontrado durante o desenvolvimento. Ele é iniciado e finalizado no \textit{branch develop}. Seu prefixo é semelhante ao do \textit{branch feature}, por exemplo, \textit{bugfix/erro-cadastramento}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\nocite{envelhecimento}
 %\nocite{alice}
 %\nocite{camarano}
