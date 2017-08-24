@@ -6,8 +6,9 @@
 \contentsline {section}{\numberline {1.2}O GitLab}{6}{section.1.2}
 \contentsline {section}{\numberline {1.3}O Git-flow}{6}{section.1.3}
 \contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {A estrat\IeC {\'e}gia de ramifica\IeC {\c c}\IeC {\~a}o}}{7}{chapter.2}
-\contentsline {section}{\numberline {2.1}Os branches}{8}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}O \textit {branch} \textit {master}}{8}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}O \textit {branch develop}}{8}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.1}Os branches}{7}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}O \textit {branch} \textit {master}}{7}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}O \textit {branch develop}}{7}{subsection.2.1.2}
 \contentsline {subsection}{\numberline {2.1.3}O \textit {branch} \textit {feature}}{9}{subsection.2.1.3}
 \contentsline {subsection}{\numberline {2.1.4}O \textit {branch release}}{10}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {2.1.5}Os \textit {branches hotfixes} e \textit {bugfixes}}{11}{subsection.2.1.5}
