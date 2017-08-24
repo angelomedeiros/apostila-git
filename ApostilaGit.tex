@@ -549,7 +549,56 @@ A primeira maneira deve ser usada quando você fez poucas alterações, e você 
 
 \chapter{Comandos mais usados no git}
 
-Nesse capítulo irei apresentar os principais comandos usados pelo git, e darei algumas dicas.
+Nesse capítulo irei apresentar os principais comandos usados pelo git, e sempre estarei dando algumas dicas.
+
+Até agora vocês aprenderam a visualizar em que estágio está sua aplicação, e a criar os \textit{commits}. Agora ensinarei como visualizar os \textit{commits} criados, o \textit{log}. O comando básico para visualizar um \textit{log} é o \textit{git log}(ver figura \ref{gitlog}), mas ele pode vim com outras opções também, ensinarei os mais usados a seguir.
+
+\begin{figure}[h]
+	\caption{\label{gitlog}Visualizando o log básico}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{gitlog}
+	\end{center}
+	\legend{Fonte: (Do autor)}
+\end{figure}
+
+Irei adicionar dentro do arquivo helloWorld, o texto a seguir e fazer um novo commit. 
+
+\begin{verbatim}
+          # Comando para imprimir na tela usando o python 2.x
+          
+          print "Hello world!"
+\end{verbatim}
+
+A figura \ref{pretty} mostra a execução do commando \textit{git log --pretty=oneline}. Esse comando exibe o log de forma reduzida, mostrando apenas o \textit{hash} e os comentários em apenas uma linha.
+
+\begin{figure}[h]
+	\caption{\label{pretty}Outra maneira de visualizar o log}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{pretty}
+	\end{center}
+	\legend{Fonte: (Do autor)}
+\end{figure}
+
+Outra opção para o mesmo comando é:
+
+\begin{itemize}
+	\item \verb|git log --pretty=oneline -2|, o parâmetro -2, faz com que o comando exiba apenas os dois últimos commits(você pode alterar o parâmetro por qualquer outro valor).
+\end{itemize}
+
+Abaixo seguem outros comandos para vocês experimentarem:
+
+\begin{itemize}
+	\item \verb|git log -p|, exibe as alterãções em cada arquivo de todos os commits;
+	\item \verb|git log -p -3|, exibe as alterãções em cada arquivo dos últimos 3 commits;
+	\item \verb|git log -stat|, exibe um resumo das alterações;
+	\item \verb|git log -stat -2|, exibe um resumo das alterações dos últimos dois commits;
+	\item \verb|git log --since=10.minutes|, exibe os commits dos últimos 10 minutos;
+	\item \verb|git log --since=2.hours|, exibe os commits das últimas duas horas;
+	\item \verb|git log --since=1.days|, exibe os commits no intervalo de tempo de um dia.
+\end{itemize}
+
+
+
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\nocite{envelhecimento}
 %\nocite{alice}
