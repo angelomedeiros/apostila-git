@@ -1,2 +1,5 @@
-ApostilaGit.log
-ApostilaGit.modifiedsynctex.gz
+*.log
+*.aux
+*.lof
+*.gz
+*.toc

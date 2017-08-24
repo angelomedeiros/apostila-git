@@ -66,10 +66,10 @@
 %	Citado #1 vezes nas páginas #2.
 %	\fi}
 
-\titulo{Git + Git-flow para Leigos com GitLab\\ (Git + Git-flow for Dummies with GitLab)}
+\titulo{Git, uma abordagem \\ pragmática}
 \autor{Angelo Medeiros Nóbrega}
 \local{João Pessoa - PB}
-\data{2017 - V0.1.0}			 %Alterar para 2017?
+\data{2017 - V0.2.0}			 %Alterar para 2017?
 %\orientador[Orientadora:]{Prof. Dra. Rossana Maria Souto Maior Serrano}
 %\coorientador{Equipe \abnTeX}
 %\instituicao{%
@@ -407,8 +407,213 @@ Análogo ao \textit{branch release}, o prefixo do \textit{branch hotfix} é \tex
 
 Já o \textit{branch bugfix}, ele deve ser criado quando um \textit{bug} é encontrado durante o desenvolvimento. Ele é iniciado e finalizado no \textit{branch develop}. Seu prefixo é semelhante ao do \textit{branch feature}, por exemplo, \textit{bugfix/erro-cadastramento}.
 
+\chapter{Primeiros passos com o Git}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Nessa etapa vamos supor que todos estejam com o Git e o Git-flow instalados, caso haja a necessidade de um guia para as instalações, esse será adicionado como apêncide no final livro em futuras versões.
+
+\section{Configuração inicial}
+
+O primeiro passo é abrir seu console preferido, se estiverem no Linux ou macOS, abram o terminal. Se estiverem utilizando o Windows, podem utilizar o Git Bash, que é instaldo com o Git. Ainda para usuários Windows, uma dica que eu dou é usar o Cmder, é um console free e muito mais agradável de se trabalhar, e não prescisa ser instaldo, ver figura \ref{cmder}. Sugiro também não utilizar o MS-DOS, nem o PowerShell.
+
+\begin{figure}[h]
+	\caption{\label{cmder}Uma alternativa para o MS-DOS, o \textit{Cmder}}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{cmder}
+	\end{center}
+	\legend{Fonte: (http://cmder.net/)}
+\end{figure}
+
+Com o seu console aberto digite \textit{git}, e aperte enter, isso irá verificar se o git foi instaldo corretamente. Se ele tiver sido instalado corretamente, irá aparecer algo semelhante a figura \ref{terminal}.
+
+\begin{figure}[h]
+	\caption{\label{terminal}Verificando a instalação do git}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{terminal}
+	\end{center}
+	\legend{Fonte: (Do autor)}
+\end{figure}
+
+Com o git devidamente instalado, vamos começar a configuração. Para isso insira os seguintes comandos, o primeiro será para o git identificar seu nome, e o segundo seu email(figura \ref{configuracao}):
+
+	\begin{verbatim}
+		          git config --global user.name "Angelo Medeiros"
+		          git config --global user.email "angelo@email.com"
+	\end{verbatim}
+
+Caso queira visualizar suas configuração globais, digite o comando:
+
+\begin{verbatim}
+		          git config --global --list
+\end{verbatim}
+
+O próximo comando serve para facilitar o entendimento visual:
+
+		\begin{verbatim}
+		          git config --global color.ui true
+		\end{verbatim}
+
+\begin{figure}[h]
+	\caption{\label{configuracao}Configuração inicial do git}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{configuracao}
+	\end{center}
+	\legend{Fonte: (Do autor)}
+\end{figure}
+
+\chapter{Os 3 estágios}
+
+Nesse capítulo ensinarei a criar seu primeiro repositório git. E quais são os três principais estágios do processo para o versionamento usado pelo git.
+
+\section{Criando um repositório}
+
+O primeiro passo é acessar a pasta que você quer iniciar o repositório git. Para exemplificar eu criei uma pasta chamada gitLegal, e usei os seguintes comandos(ver figura \ref{repositorio}):
+
+\begin{verbatim}
+		        Criando a pasta gitLegal: mkdir gitLegal
+		        Acessando a pasta criada: cd gitLegal
+		        Verificando o conteudo da pasta: ls
+		        Iniciando o repositório git: git init
+		        Verificando novamente a pasta: ls
+		        Verificando a existência de arquivos ocultos: ls -a
+\end{verbatim}
+
+\begin{figure}[h]
+	\caption{\label{repositorio}Criando repositório git}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{repositorio}
+	\end{center}
+	\legend{Fonte: (Do autor)}
+\end{figure}
+
+O processo de verificação da pasta foi feito apenas para mostrar que quando o repositório é inicializado o git cria uma pasta oculta. Nessa pasta oculta estão todos os arquivos necessário para o git gerenciar seu repositório. Na prática você usará apenas o comando \textit{git init}.
+
+\section{O primeiro estágio}
+
+O primeiro estágio é chamado de "untracked files". Assim que você faz alguma aleteração no repositório, cria uma pasta ou arquivo, ou altera um arquivo, isso faz com que o elemento que você alterou entre no primeiro estágio.
+
+Para verificar em que estágio seus elementos estão, basta digitar o comando \textit{git status}.
+
+Se for dado um \textit{git status} na pasta gitLegal, não irá aparecer nada, pois o repositório não teve nemnhuma alteração. 
+
+Para demonstrar o primeiro estágio irei criar um arquivo em branco chamado \textit{helloWorld} e, em seguida, executarei o comando para verificar o estágio(ver figura \ref{estagio1}).
+
+\begin{figure}[h]
+	\caption{\label{estagio1}O primeiro estágio}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{estagio1}
+	\end{center}
+	\legend{Fonte: (Do autor)}
+\end{figure}
+
+O comando \textit{touch} foi usado para a criação do arquivo \textit{helloWorld}.
+
+\section{O segundo estágio}
+
+O segundo estágio é chamado de "Changes to be committed". Nessa etapa você irá adicionar os elementos do primeiro estágio para serem "commitados" na próxima etapa. Irei criar outro arquivo em branco, chamado helloWorld2, apenas para ficar mais claro a importância dessa etapa(ver figura \ref{estagio2}).
+
+\begin{figure}[h]
+	\caption{\label{estagio2}O segundo estágio}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{estagio2}
+	\end{center}
+	\legend{Fonte: (Do autor)}
+\end{figure}
+
+Agora vamos entender o que foi feito. Com a adição do arquivo helloWorld2, o primeiro estágio agora tem dois elementos. Vamos supor que você queira adicionar apenas o primeiro helloWorld world para o último estágio. Para fazer isso, foi necessário apenas usar o comando \textit{git add helloWorld}.
+
+Como mostra a figura \ref{estagio2}, no segundo estágio encontra-se apenas o primeiro \textit{helloWorld}. Peço desculpas pela falta de criatividade ao nomear os elementos.
+
+\section{O terceiro estágio}
+
+Nesse estágio é onde acontece o famoso \textit{commit}. Para quem não sabe o que é um \textit{commit}, ele nada mais é que um \textit{snapshot} do estado de sua aplicação. Na figura \ref{estagio3} mostra o arquivo \textit{helloWorld} sendo "commitado". Observe que após o \textit{commit}, o arquivo \textit{helloWorld} não aparece mais quando é usado o comando \textit{git status}. O arquivo só voltará a aparecer quando sofrer alguma alteração novamente. 
+
+\begin{figure}[h]
+	\caption{\label{estagio3}O terceiro estágio}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{estagio3}
+	\end{center}
+	\legend{Fonte: (Do autor)}
+\end{figure}
+
+Existem duas principais maneiras de realizar um \textit{commit}, na figura \ref{estagio3} mostra uma delas. Na figura \ref{commit} mostrarei a outra maneira realizando um \textit{commit} do \textit{helloWorld2}. 
+
+\begin{figure}[h]
+	\caption{\label{commit}Outra maneira de realizar um commit}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{commit2}
+	\end{center}
+	\legend{Fonte: (Do autor)}
+\end{figure}
+
+A primeira maneira deve ser usada quando você fez poucas alterações, e você consegue descrever todas esses mudanças em apenas uma linha usado o commando \textit{git commit -m "comentario"}. A segunda maneira deve ser usada quando for preciso descrever diversas alterações e, apenas uma linha não basta. Uma dica é, evite usar acentuação dentro dos comentários, quando a acentuação é usada, algumas vezes quando você for visualizar os commits, a acentuação poderá não ser reconhecida pelo console.
+
+\chapter{Comandos mais usados no git}
+
+Nesse capítulo irei apresentar os principais comandos usados pelo git, e sempre estarei dando algumas dicas.
+
+\section{Visualizando o log}
+
+Até agora vocês aprenderam a visualizar em que estágio está sua aplicação, e a criar os \textit{commits}. Agora ensinarei como visualizar os \textit{commits} criados, o \textit{log}. O comando básico para visualizar um \textit{log} é o \textit{git log}(ver figura \ref{gitlog}), mas ele também pode vim com outras opções, ensinarei os mais usados.
+
+\begin{figure}[h]
+	\caption{\label{gitlog}Visualizando o log básico}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{gitlog}
+	\end{center}
+	\legend{Fonte: (Do autor)}
+\end{figure}
+
+Irei adicionar dentro do arquivo helloWorld, o texto a seguir e fazer um novo commit. 
+
+\begin{verbatim}
+          # Comando para imprimir na tela usando o python 2.x 
+                   
+          print "Hello world!"
+\end{verbatim}
+
+A figura \ref{pretty} mostra a execução do commando \textit{git log --pretty=oneline}. Esse comando exibe o log de forma reduzida, mostrando apenas o \textit{hash} e os comentários em apenas uma linha.
+
+\begin{figure}[h]
+	\caption{\label{pretty}Outra maneira de visualizar o log}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{pretty}
+	\end{center}
+	\legend{Fonte: (Do autor)}
+\end{figure}
+
+Outra opção para o mesmo comando é:
+
+\begin{itemize}
+	\item \verb|git log --pretty=oneline -2|, o parâmetro -2, faz com que o comando exiba apenas os dois últimos commits(você pode alterar o parâmetro por qualquer outro valor).
+\end{itemize}
+
+Abaixo seguem outros comandos para vocês experimentarem:
+
+\begin{itemize}
+	\item \verb|git log -p|, exibe as alterãções em cada arquivo de todos os commits;
+	\item \verb|git log -p -1|, exibe as alterãções do último commit(ver figura \ref{logp});
+	\item \verb|git log -stat|, exibe um resumo das alterações;
+	\item \verb|git log -stat -2|, exibe um resumo das alterações dos últimos dois commits;
+	\item \verb|git log --since=10.minutes|, exibe os commits dos últimos 10 minutos;
+	\item \verb|git log --since=2.hours|, exibe os commits das últimas duas horas;
+	\item \verb|git log --since=1.days|, exibe os commits no intervalo de tempo de um dia.
+\end{itemize}
+
+
+\begin{figure}[H]
+	\caption{\label{logp}Mais uma maneira de visualizar o log}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{logp}
+	\end{center}
+	\legend{Fonte: (Do autor)}
+\end{figure}
+
+Na figura \ref{logp} as linhas que começam com um símbolo de mais(+) indica algo que foi adicionado. Se começar com o símbolo de menos($-$) significa que algo foi retirado. Os números entre os símbolos de (@), indicam as posições das linhas, onde houve alterações. Quando vocês estiverem praticando, isso ficará mais claro.
+
+\section{Criando branches}
+
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\nocite{envelhecimento}
 %\nocite{alice}
 %\nocite{camarano}
