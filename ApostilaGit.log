@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400) (preloaded format=pdflatex 2017.8.9)  23 AUG 2017 21:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400) (preloaded format=pdflatex 2017.8.9)  24 AUG 2017 14:27
 entering extended mode
 **./ApostilaGit.tex
 (ApostilaGit.tex
@@ -1288,7 +1288,7 @@ LaTeX Font Warning: Font shape `T1/lmss/bx/sc' undefined
 
 
 ] [6]
-<estrategia.png, id=91, 1154.3125pt x 1529.715pt>
+<estrategia.png, id=123, 1154.3125pt x 1529.715pt>
 File: estrategia.png Graphic file (type png)
 <use estrategia.png>
 Package pdftex.def Info: estrategia.png  used on input line 326. on input line 
@@ -1304,7 +1304,7 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
 [7
 
 ]
-<develop.png, id=97, 536.0025pt x 807.015pt>
+<develop.png, id=129, 536.0025pt x 807.015pt>
 File: develop.png Graphic file (type png)
 <use develop.png>
 Package pdftex.def Info: develop.png  used on input line 351. on input line 351
@@ -1328,14 +1328,14 @@ dentifier (name{figure.2.2}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.363 
        <./develop.png>]
-<feature.png, id=109, 266.9975pt x 716.6775pt>
+<feature.png, id=141, 266.9975pt x 716.6775pt>
 File: feature.png Graphic file (type png)
 <use feature.png>
 Package pdftex.def Info: feature.png  used on input line 367. on input line 367
 .
 Package pdftex.def Info: Requested size: 118.2975pt x 317.53714pt on input line
  367.
-<feature-merges.png, id=111, 959.585pt x 849.1725pt>
+<feature-merges.png, id=143, 959.585pt x 849.1725pt>
 File: feature-merges.png Graphic file (type png)
 <use feature-merges.png>
 Package pdftex.def Info: feature-merges.png  used on input line 379. on input l
@@ -1353,7 +1353,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
                                                   \fi \fi 
 l.389 
        <./feature.png>]
-<hotfix.png, id=118, 634.37pt x 855.195pt>
+<hotfix.png, id=150, 634.37pt x 855.195pt>
 File: hotfix.png Graphic file (type png)
 <use hotfix.png>
 Package pdftex.def Info: hotfix.png  used on input line 403. on input line 403.
@@ -1366,38 +1366,175 @@ e 403.
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.406 \end{figure}
-                   <./feature-merges.png>] 
-AED: lastpage setting LastPage
-[12pdfTeX warning (ext4): destination with the same identifier (name{figure.2.5
-}) has been already used, duplicate ignored
+                   <./feature-merges.png>] [12pdfTeX warning (ext4): destinatio
+n with the same identifier (name{figure.2.5}) has been already used, duplicate 
+ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.450 \end{document}
-                     <./hotfix.png>]
+l.410 \chapter
+              {Primeiros passos com o Git} <./hotfix.png>]
+<cmder.png, id=163, 1371.1225pt x 746.79pt>
+File: cmder.png Graphic file (type png)
+<use cmder.png>
+Package pdftex.def Info: cmder.png  used on input line 421. on input line 421.
+Package pdftex.def Info: Requested size: 455.0pt x 247.82025pt on input line 42
+1.
+ [13
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.6}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.427 
+       <./cmder.png>]
+<terminal.png, id=171, 963.6pt x 245.91875pt>
+File: terminal.png Graphic file (type png)
+<use terminal.png>
+Package pdftex.def Info: terminal.png  used on input line 431. on input line 43
+1.
+Package pdftex.def Info: Requested size: 455.0pt x 116.11841pt on input line 43
+1.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 438.
+
+ (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+<configuracao.png, id=173, 921.4425pt x 145.54375pt>
+File: configuracao.png Graphic file (type png)
+<use configuracao.png>
+Package pdftex.def Info: configuracao.png  used on input line 458. on input lin
+e 458.
+Package pdftex.def Info: Requested size: 455.0pt x 71.86781pt on input line 458
+.
+ [14pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+7}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.463 \chapter
+              {Os 3 estágios}pdfTeX warning (ext4): destination with the same 
+identifier (name{figure.3.8}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.463 \chapter
+              {Os 3 estágios} <./terminal.png> <./configuracao.png>]
+<repositorio.png, id=182, 826.08624pt x 205.76875pt>
+File: repositorio.png Graphic file (type png)
+<use repositorio.png>
+Package pdftex.def Info: repositorio.png  used on input line 483. on input line
+ 483.
+Package pdftex.def Info: Requested size: 455.0pt x 113.33641pt on input line 48
+3.
+ [15
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4.9}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.493 
+       <./repositorio.png>]
+<estagio1.png, id=189, 1219.55624pt x 469.755pt>
+File: estagio1.png Graphic file (type png)
+<use estagio1.png>
+Package pdftex.def Info: estagio1.png  used on input line 503. on input line 50
+3.
+Package pdftex.def Info: Requested size: 455.0pt x 175.2617pt on input line 503
+.
+<estagio2.png, id=191, 888.31876pt x 728.7225pt>
+File: estagio2.png Graphic file (type png)
+<use estagio2.png>
+Package pdftex.def Info: estagio2.png  used on input line 517. on input line 51
+7.
+Package pdftex.def Info: Requested size: 455.0pt x 373.25587pt on input line 51
+7.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[16pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
+0}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.525 
+       <./estagio1.png>]
+<estagio3.png, id=199, 1092.08pt x 323.2075pt>
+File: estagio3.png Graphic file (type png)
+<use estagio3.png>
+Package pdftex.def Info: estagio3.png  used on input line 533. on input line 53
+3.
+Package pdftex.def Info: Requested size: 455.0pt x 134.66124pt on input line 53
+3.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<commit2.png, id=202, 934.49126pt x 298.11375pt>
+File: commit2.png Graphic file (type png)
+<use commit2.png>
+Package pdftex.def Info: commit2.png  used on input line 543. on input line 543
+.
+Package pdftex.def Info: Requested size: 455.0pt x 145.14905pt on input line 54
+3.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[17pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
+1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.549 
+       <./estagio2.png>] [18pdfTeX warning (ext4): destination with the same id
+entifier (name{figure.4.12}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.550 \chapter
+              {Comandos mais usados no git}pdfTeX warning (ext4): destination w
+ith the same identifier (name{figure.4.13}) has been already used, duplicate ig
+nored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.550 \chapter
+              {Comandos mais usados no git} <./estagio3.png> <./commit2.png>]
+
+AED: lastpage setting LastPage
+[19
+
+]
 \tf@lof=\write5
 \openout5 = `ApostilaGit.lof'.
 
 \tf@toc=\write6
 \openout6 = `ApostilaGit.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 450.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 450.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 592.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 592.
  (ApostilaGit.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 450.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 450.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 592.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 592.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 450.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 592.
  ) 
 Here is how much of TeX's memory you used:
- 14127 strings out of 495203
- 207509 string characters out of 3180893
- 456743 words of memory out of 3000000
- 17043 multiletter control sequences out of 15000+200000
- 71776 words of font info for 106 fonts, out of 3000000 for 9000
+ 14277 strings out of 495203
+ 209509 string characters out of 3180893
+ 457268 words of memory out of 3000000
+ 17137 multiletter control sequences out of 15000+200000
+ 73118 words of font info for 117 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  42i,12n,38p,2023b,473s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/
@@ -1406,10 +1543,11 @@ hare/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public
 /lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/t
 exmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/l
 mss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texm
-f/fonts/type1/public/lm/lmsso12.pfb>
-Output written on ApostilaGit.pdf (13 pages, 468821 bytes).
+f/fonts/type1/public/lm/lmsso12.pfb></usr/share/texmf/fonts/type1/public/lm/lmt
+t12.pfb>
+Output written on ApostilaGit.pdf (20 pages, 1534285 bytes).
 PDF statistics:
- 218 PDF objects out of 1000 (max. 8388607)
- 46 named destinations out of 1000 (max. 500000)
- 26770 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 338 PDF objects out of 1000 (max. 8388607)
+ 69 named destinations out of 1000 (max. 500000)
+ 27386 words of extra memory for PDF output out of 29859 (max. 10000000)
 
