@@ -551,7 +551,9 @@ A primeira maneira deve ser usada quando você fez poucas alterações, e você 
 
 Nesse capítulo irei apresentar os principais comandos usados pelo git, e sempre estarei dando algumas dicas.
 
-Até agora vocês aprenderam a visualizar em que estágio está sua aplicação, e a criar os \textit{commits}. Agora ensinarei como visualizar os \textit{commits} criados, o \textit{log}. O comando básico para visualizar um \textit{log} é o \textit{git log}(ver figura \ref{gitlog}), mas ele pode vim com outras opções também, ensinarei os mais usados a seguir.
+\section{Visualizando o log}
+
+Até agora vocês aprenderam a visualizar em que estágio está sua aplicação, e a criar os \textit{commits}. Agora ensinarei como visualizar os \textit{commits} criados, o \textit{log}. O comando básico para visualizar um \textit{log} é o \textit{git log}(ver figura \ref{gitlog}), mas ele também pode vim com outras opções, ensinarei os mais usados.
 
 \begin{figure}[h]
 	\caption{\label{gitlog}Visualizando o log básico}
@@ -564,8 +566,8 @@ Até agora vocês aprenderam a visualizar em que estágio está sua aplicação,
 Irei adicionar dentro do arquivo helloWorld, o texto a seguir e fazer um novo commit. 
 
 \begin{verbatim}
-          # Comando para imprimir na tela usando o python 2.x
-          
+          # Comando para imprimir na tela usando o python 2.x 
+                   
           print "Hello world!"
 \end{verbatim}
 
@@ -589,7 +591,7 @@ Abaixo seguem outros comandos para vocês experimentarem:
 
 \begin{itemize}
 	\item \verb|git log -p|, exibe as alterãções em cada arquivo de todos os commits;
-	\item \verb|git log -p -3|, exibe as alterãções em cada arquivo dos últimos 3 commits;
+	\item \verb|git log -p -1|, exibe as alterãções do último commit(ver figura \ref{logp});
 	\item \verb|git log -stat|, exibe um resumo das alterações;
 	\item \verb|git log -stat -2|, exibe um resumo das alterações dos últimos dois commits;
 	\item \verb|git log --since=10.minutes|, exibe os commits dos últimos 10 minutos;
@@ -598,6 +600,15 @@ Abaixo seguem outros comandos para vocês experimentarem:
 \end{itemize}
 
 
+\begin{figure}[H]
+	\caption{\label{logp}Mais uma maneira de visualizar o log}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{logp}
+	\end{center}
+	\legend{Fonte: (Do autor)}
+\end{figure}
+
+Na figura \ref{logp} as linhas que começam com um símbolo de mais(+) indica algo que foi adicionado. Se começar com o símbolo de menos($-$) significa que algo foi retirado. Os números entre os símbolos de (@), indicam as posições das linhas, onde houve alterações. Quando vocês estiverem praticando, isso ficará mais claro.
 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\nocite{envelhecimento}
