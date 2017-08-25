@@ -608,7 +608,7 @@ Abaixo seguem outros comandos para vocês experimentarem:
 	\legend{Fonte: (Do autor)}
 \end{figure}
 
-Na figura \ref{logp} as linhas que começam com um símbolo de mais(+) indica algo que foi adicionado. Se começar com o símbolo de menos($-$) significa que algo foi retirado. Os números entre os símbolos de (@), indicam as posições das linhas, onde houveram alterações. Quando vocês estiverem praticando, isso ficará mais claro.
+Na figura \ref{logp} as linhas que começam com um símbolo de mais(+) indica alg:wo que foi adicionado. Se começar com o símbolo de menos($-$) significa que algo foi retirado. Os números entre os símbolos de (@), indicam as posições das linhas, onde houveram alterações. Quando vocês estiverem praticando, isso ficará mais claro.
 
 \section{Criando branches}
 
@@ -630,6 +630,64 @@ Observe que quando você cria um \textit{branch}, o \textit{git} já inicia dent
 	\item \verb|git branch -a|, exibe os branches locais e os remotos(se você tiver trabalhano com branches remotos);
 	\item \verb|git branch -d nomeDoBranch|, deleta o \textit{branch nomeDoBranch}.
 \end{itemize}
+
+\section{Mesclando branches}
+
+Mesclar branches na maioria das vezes é uma tarefa fácil. Porém algumas vezes ocorrem conflitos, esse assunto será tratado em uma seção mais na frente. Por enquanto, vamos se preocupar apenas em mesclar os \textit{branches}. São duas as principais maneiras de fazer a mesclagem usando o git, você pode usar o \textit{merge} ou o \textit{rebase}.
+
+\subsection{Mesclando usando o merge}
+
+O comando para usar o merge é  \verb|git merge funcionalidade1|. Ele irá mesclar o \textit{branch funcionalidade1} com o \textit{branch atual}.
+
+A vantagem do merge é que ele preserva um histórico completo do seu projeto e, evita problemas quando está trabalhando em grupo(ver figura \ref{merge}).
+
+\begin{figure}[H]
+	\caption{\label{merge}Mesclando usando o merge}
+	\begin{center}
+		\includegraphics[width=0.5\linewidth]{merge}
+	\end{center}
+	\legend{Fonte: (https://stackoverflow.com/questions/16666089)}
+\end{figure}
+
+\subsection{Mesclando usando o rebase}
+
+O rebase preserva um histórico mais limpo e linear do seu projeto, porém ao trabalhar em grupo isso torna-se uma desvantagem, pois o rebase recria os commits. Na figura \ref{rebase} quando o elemento E foi mesclado com o elemento D dando origem ao elemento R, o elemento E foi reescrito com outro commit, isto é, com outro hash. Então para alguém de fora que tenha o elemento E vai ter um commit diferente do seu, apesar de ser o mesmo elemento, tornando algo confuso.
+
+\begin{figure}[H]
+	\caption{\label{rebase}Mesclando usando o rebase}
+	\begin{center}
+		\includegraphics[width=0.5\linewidth]{rebase}
+	\end{center}
+	\legend{Fonte: (https://stackoverflow.com/questions/16666089)}
+\end{figure}
+
+O rebase é aconselhado apenas quando você está trabalhando localmente, a não ser que você saiba o que está fazaendo. Caso contrário, use sempre o merge. A documentação do git descreve diversos parâmetros que podem e devem ser usados, tanto para o rebase e para o merge.
+
+\section{Voltando versões}
+
+Na minha opinião essa é a principal função do git, o processo de voltar versões. Existem diversas maneiras de fazer isso. Algumas são simples, mas não oferecem muita segurança para quem está iniciando nesse novo mundo do controle de versões. Outras envolvem mais etapas, porém você sentirá segurança realizando o processo,  o fato de ter mais etapas não o torna mais difícil.
+
+A maioria dos comandos para voltar versões necessitam do \textit{hash} do \textit{commit}, você pode encontrar esse \textit{hash} visualizando o \textit{log}. Não é necessário o hash completo, apenas o começo. A seguir estão os principais comandos:
+
+\begin{itemize}
+	\item \verb|git reset d3fbdd741 --hard|, desfaz todas as alterações anteriores do commit d3fbdd741(ver figura \ref{voltando});
+	\item \verb|git reset HEAD~2 --hard|, desfaz todas as alterações dos dois últimos commits;
+	\item \verb|git ckeckout d3fbdd741|, cria um branch temporário a partir do commit d3fbdd741.
+\end{itemize}
+
+\begin{figure}[h]
+	\caption{\label{voltando}Voltando versão}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{voltando}
+	\end{center}
+	\legend{Fonte: (Do autor)}
+\end{figure}
+
+Entendo a figura \ref{voltando}. Veja que antes do \textit{reset} existia o arquivo \textit{helloWorld2}. No final do processo além de apagar o arquivo \textit{helloWorld2}, as alterações feitas no arquivo \textit{helloWorld} também foram desfeitas, apesar de não mostrar na figura. Essas mudanças aconteceram porquê o arquivo \textit{heloWorld2} foi criado no \textit{commit} eddcb203a, como pode ser observado nos comentários do \textit{commit} mostrado no \textit{log}, e o conteudo do arquivo \textit{helloWorld} ocorreu no \textit{commit} 2bf2040e30. Por isso a importância de documentar corretamenta os \textit{commits}.
+
+Você pode combinar diversas técnicas para voltar versões usando o git. Quando forem ganhando mais segurança do que estão fazendo, o processo de voltar versões irá se tornar algo natural. Por exemplo, você pode criar um novo \textit{branch} a partir do qual queira voltar uma versão, e depois mesclar esse novo \textit{branch} com o \textit{branch} principal. Depende apenas da sua engenhosidade, então façam diversos experimentos usando o git para adquirir experiência.
+
+\section{Usando repositórios remotos}
 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\nocite{envelhecimento}
