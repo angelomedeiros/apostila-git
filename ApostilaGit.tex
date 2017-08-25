@@ -592,8 +592,8 @@ Abaixo seguem outros comandos para vocês experimentarem:
 \begin{itemize}
 	\item \verb|git log -p|, exibe as alterãções em cada arquivo de todos os commits;
 	\item \verb|git log -p -1|, exibe as alterãções do último commit(ver figura \ref{logp});
-	\item \verb|git log -stat|, exibe um resumo das alterações;
-	\item \verb|git log -stat -2|, exibe um resumo das alterações dos últimos dois commits;
+	\item \verb|git log --stat|, exibe um resumo das alterações;
+	\item \verb|git log --stat -2|, exibe um resumo das alterações dos últimos dois commits;
 	\item \verb|git log --since=10.minutes|, exibe os commits dos últimos 10 minutos;
 	\item \verb|git log --since=2.hours|, exibe os commits das últimas duas horas;
 	\item \verb|git log --since=1.days|, exibe os commits no intervalo de tempo de um dia.
@@ -608,10 +608,28 @@ Abaixo seguem outros comandos para vocês experimentarem:
 	\legend{Fonte: (Do autor)}
 \end{figure}
 
-Na figura \ref{logp} as linhas que começam com um símbolo de mais(+) indica algo que foi adicionado. Se começar com o símbolo de menos($-$) significa que algo foi retirado. Os números entre os símbolos de (@), indicam as posições das linhas, onde houve alterações. Quando vocês estiverem praticando, isso ficará mais claro.
+Na figura \ref{logp} as linhas que começam com um símbolo de mais(+) indica algo que foi adicionado. Se começar com o símbolo de menos($-$) significa que algo foi retirado. Os números entre os símbolos de (@), indicam as posições das linhas, onde houveram alterações. Quando vocês estiverem praticando, isso ficará mais claro.
 
 \section{Criando branches}
 
+Para criar um novo \textit{branch}, usamos o comando \textit{git checkout -b nomeBranch}. Onde \textit{nomeBranch} deve ser substituído pelo nome do \textit{branch} que você quer criar. Vale resaltar que um \textit{branch} é sempre criado baseado no \textit{branch} atual, ou seja, se você estiver no\textit{ branch master}, o novo \textit{branch} será um clone do \textit{branch master}, ver figura \ref{novobranch}.
+
+\begin{figure}[H]
+	\caption{\label{novobranch}Criando um branch}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{novobranch}
+	\end{center}
+	\legend{Fonte: (Do autor)}
+\end{figure}
+
+Observe que quando você cria um \textit{branch}, o \textit{git} já inicia dentro do novo \textit{branch}. Irei listar abaixo os principais comandos relacionados a manipulação dos branches.
+
+\begin{itemize}
+	\item \verb|git checkout nomeDoBranch|, troca do \textit{branch} atual para o \textit{branch nomeDoBranch};
+	\item \verb|git branch|, exibe os branches criados localmente;
+	\item \verb|git branch -a|, exibe os branches locais e os remotos(se você tiver trabalhano com branches remotos);
+	\item \verb|git branch -d nomeDoBranch|, deleta o \textit{branch nomeDoBranch}.
+\end{itemize}
 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\nocite{envelhecimento}
