@@ -413,7 +413,7 @@ Nessa etapa vamos supor que todos estejam com o Git e o Git-flow instalados, cas
 
 \section{Configuração inicial}
 
-O primeiro passo é abrir seu console preferido, se estiverem no Linux ou macOS, abram o terminal. Se estiverem utilizando o Windows, podem utilizar o Git Bash, que é instaldo com o Git. Ainda para usuários Windows, uma dica que eu dou é usar o Cmder, é um console free e muito mais agradável de se trabalhar, e não prescisa ser instaldo, ver figura \ref{cmder}. Sugiro também não utilizar o MS-DOS, nem o PowerShell.
+O primeiro passo é abrir seu console preferido, se estiverem no Linux ou macOS, abram o terminal. Se estiverem utilizando o Windows, podem utilizar o Git Bash, que é instaldo com o Git. Ainda para usuários Windows, uma dica que eu dou é usar o Cmder, é um console free e muito mais agradável de se trabalhar, e não prescisa ser instaldo, apenas ser baixado, ver figura \ref{cmder}. Sugiro também não utilizar o MS-DOS, nem o PowerShell.
 
 \begin{figure}[h]
 	\caption{\label{cmder}Uma alternativa para o MS-DOS, o \textit{Cmder}}
@@ -509,7 +509,7 @@ O comando \textit{touch} foi usado para a criação do arquivo \textit{helloWorl
 
 \section{O segundo estágio}
 
-O segundo estágio é chamado de "Changes to be committed". Nessa etapa você irá adicionar os elementos do primeiro estágio para serem "commitados" na próxima etapa. Irei criar outro arquivo em branco, chamado helloWorld2, apenas para ficar mais claro a importância dessa etapa(ver figura \ref{estagio2}).
+O segundo estágio é chamado de "Changes to be committed". Nessa etapa você irá adicionar os elementos do primeiro estágio para serem "commitados" \ no terceiro estágio. Irei criar outro arquivo em branco, chamado helloWorld2, apenas para ficar mais claro a importância dessa etapa(ver figura \ref{estagio2}).
 
 \begin{figure}[h]
 	\caption{\label{estagio2}O segundo estágio}
@@ -522,6 +522,8 @@ O segundo estágio é chamado de "Changes to be committed". Nessa etapa você ir
 Agora vamos entender o que foi feito. Com a adição do arquivo helloWorld2, o primeiro estágio agora tem dois elementos. Vamos supor que você queira adicionar apenas o primeiro helloWorld world para o último estágio. Para fazer isso, foi necessário apenas usar o comando \textit{git add helloWorld}.
 
 Como mostra a figura \ref{estagio2}, no segundo estágio encontra-se apenas o primeiro \textit{helloWorld}. Peço desculpas pela falta de criatividade ao nomear os elementos.
+
+Na maioria das vezes é necessário adicionar mais de uma arquivo ao terceiro estágio e não é viável adicionar um por um. Uma alternativa mais eficiente para essa situação é usar o comando "\textbf{git add .}", ele irá adicionar todos os arquivos ao terceiro estágio. Preste atenção no ponto seguido do add, ele também faz parte do comando.
 
 \section{O terceiro estágio}
 
@@ -687,7 +689,42 @@ Entendo a figura \ref{voltando}. Veja que antes do \textit{reset} existia o arqu
 
 Você pode combinar diversas técnicas para voltar versões usando o git. Quando forem ganhando mais segurança do que estão fazendo, o processo de voltar versões irá se tornar algo natural. Por exemplo, você pode criar um novo \textit{branch} a partir do qual queira voltar uma versão, e depois mesclar esse novo \textit{branch} com o \textit{branch} principal. Depende apenas da sua engenhosidade, então façam diversos experimentos usando o git para adquirir experiência.
 
-\chapter{Repositório remoto, o GitLab}
+\section{Algumas dicas}
+
+Nas seções seguintes serão descritas algumas dicas.
+
+\subsection{Ignorando arquivos com o Git}
+
+Geralmente tem arquivos que são criados automaticamente durante um projeto, por exemplo arquivos de log. Tais arquivos sempre ficam aparecendo no segundo estágio e isso não é algo interessante. 
+
+Para impedir que alguns arquivos fiquem aparecendo ao visualizar o status, o git trabalha com o arquivo \textbf{.gitignore}. Esse arquivo é criado na raiz do projeto e, contém os nomes dos arquivos a serem ignorados, ver figura \ref{gitignore}. 
+
+\begin{figure}[h]
+	\caption{\label{gitignore}Ignorando arquivo}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{gitignore}
+	\end{center}
+	\legend{Fonte: (Do autor)}
+\end{figure}
+
+No exemplo da figura \ref{gitignore}, os arquivos \textit{idea.log} e \textit{test.aux}, não aparecerão mais no status. Todos os arquivos que terminarem com a extensão \textbf{.lot} ou apresentarem a extensão \textbf{.tar}, por exemplo \textit{ubuntuMobile.tar.xz}, também serão ignorados. 
+
+
+\subsection{Alterando o proxy \label{alterandoproxy}}
+
+Dependendo do local onde esteja trabalhando, é necessário uma configuração prévia do proxy para o git trabalhar com repositórios remotos. 
+
+Os principais comandos para alteração do proxy são:
+
+\begin{itemize}
+	\item \verb|git config --global http.proxy "proxy:port"|
+	\item \verb|git config --global http.proxy "10.10.32.1:3128"|, altera o proxy para  10.10.32.1 na porta 3128
+	\item \verb|git config --global http.proxy ""|, altera o proxy de \textit{manual} para \textit{nenhum}
+	\item  \verb|git config --global --unset http.proxy|, outra maneira para desativar o proxy
+\end{itemize}
+
+
+\chapter{Trabalhando com repositório remoto}
 
 
 
