@@ -295,7 +295,7 @@ O Git é a ferramenta que você utilizará para fazer todo o controle de versão
 
 Desde 2005 quando o Git foi criado, ele passou por um longo período de evolução e ainda continua. Hoje ele está em uma versão estável oferecendo todas as \textit{features} citadas acima.
 
-\section{O GitLab}
+\section{O GitLab \label{gitlab}}
 
 O GitLab nada mais é que um gerenciador de repositório \textit{git} remoto. O \textit{Gitlab} apresenta algumas vantagens em relação ao \textit{Github}:
 
@@ -547,7 +547,7 @@ Existem duas principais maneiras de realizar um \textit{commit}, na figura \ref{
 	\legend{Fonte: (Do autor)}
 \end{figure}
 
-A primeira maneira deve ser usada quando você fez poucas alterações, e você consegue descrever todas esses mudanças em apenas uma linha usado o commando \textit{git commit -m "comentario"}. A segunda maneira deve ser usada quando for preciso descrever diversas alterações e, apenas uma linha não basta. Uma dica é, evite usar acentuação dentro dos comentários, quando a acentuação é usada, algumas vezes quando você for visualizar os commits, a acentuação poderá não ser reconhecida pelo console.
+A primeira maneira deve ser usada quando você fez poucas alterações, e você consegue descrever todas esses mudanças em apenas uma linha usado o commando \textit{git commit -m "comentario"}. A segunda maneira deve ser usada quando for preciso descrever diversas alterações e apenas uma linha não basta. Uma dica é, evite usar acentuação dentro dos comentários, quando a acentuação é usada, algumas vezes quando você for visualizar os commits, a acentuação poderá não ser reconhecida pelo console.
 
 \chapter{Comandos mais usados no git}
 
@@ -700,7 +700,7 @@ Geralmente tem arquivos que são criados automaticamente durante um projeto, por
 Para impedir que alguns arquivos fiquem aparecendo ao visualizar o status, o git trabalha com o arquivo \textbf{.gitignore}. Esse arquivo é criado na raiz do projeto e, contém os nomes dos arquivos a serem ignorados, ver figura \ref{gitignore}. 
 
 \begin{figure}[h]
-	\caption{\label{gitignore}Ignorando arquivo}
+	\caption{\label{gitignore}Ignorando arquivos}
 	\begin{center}
 		\includegraphics[width=1\linewidth]{gitignore}
 	\end{center}
@@ -726,7 +726,9 @@ Os principais comandos para alteração do proxy são:
 
 \chapter{Trabalhando com repositório remoto}
 
+Na seção \ref{gitlab} falei brevemente sobre o \textit{gitLab}, Nesse capítulo iremos estudar como o \textit{git} se comporta trabalhando com repositórios remotos e faleremos sobre algumas características do \textit{gitLab}.
 
+Antes de começar a usar os comandos das próximas seções, será necessário a criação de uma conta no \textit{gitLab}.
 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\nocite{envelhecimento}
