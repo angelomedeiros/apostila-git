@@ -411,7 +411,7 @@ Já o \textit{branch bugfix}, ele deve ser criado quando um \textit{bug} é enco
 
 Nessa etapa vamos supor que todos estejam com o Git e o Git-flow instalados, caso haja a necessidade de um guia para as instalações, esse será adicionado como apêncide no final livro em futuras versões.
 
-\section{Configuração inicial}
+\section{Configuração inicial \label{configinicial}}
 
 O primeiro passo é abrir seu console preferido, se estiverem no Linux ou macOS, abram o terminal. Se estiverem utilizando o Windows, podem utilizar o Git Bash, que é instaldo com o Git. Ainda para usuários Windows, uma dica que eu dou é usar o Cmder, é um console free e muito mais agradável de se trabalhar, e não prescisa ser instaldo, apenas ser baixado, ver figura \ref{cmder}. Sugiro também não utilizar o MS-DOS, nem o PowerShell.
 
@@ -729,6 +729,63 @@ Os principais comandos para alteração do proxy são:
 Na seção \ref{gitlab} falei brevemente sobre o \textit{gitLab}, Nesse capítulo iremos estudar como o \textit{git} se comporta trabalhando com repositórios remotos e faleremos sobre algumas características do \textit{gitLab}.
 
 Antes de começar a usar os comandos das próximas seções, será necessário a criação de uma conta no \textit{gitLab}.
+
+Com o \textit{gitLab} aberto siga as intruções da figura \ref{criandorep1} para iniciar o processo de criação do seu primeiro repositório. Em \textbf{\textit{1}} você irá abrir as opções para a criação do novo repositório. Em \textbf{\textit{2}} você irá selecionar \textit{New project}, a continuação segue nas figuras subsequentes.
+
+\begin{figure}[h]
+	\caption{\label{criandorep1}Criando repositório - 1ª etapa}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{criandorep1}
+	\end{center}
+	\legend{Fonte: (Do autor)}
+\end{figure}
+
+Continuando na figura \ref{criandorep2}, em \textbf{\textit{1}} você irá adicionar o nome do repositório, não necessariamente sendo igual ao repositório local. Em \textbf{\textit{2}} exibe as opções de visibilidade do projeto, não tendo relação alguma com as permissões do projeto. Em \textbf{\textit{3}} aperte em \textit{Create project}.
+
+\begin{figure}[h]
+	\caption{\label{criandorep2}Criando repositório - 2ª etapa}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{criandorep2}
+	\end{center}
+	\legend{Fonte: (Do autor)}
+\end{figure}
+
+O \textit{git} pode se comunicar com os repositórios remotos atráves de dois tipos de protocolos, podendo ser o \textit{HTTPS} e o \textit{SSH}. Com o \textit{HTTPS} não é necessário uma configuração prévia (salvas algumas exceções, como o proxy, dependendo do caso) para iniciar seu uso, enquanto o \textit{SSH} só irá funcionar se você adicionar sua chava pública \textit{SSH} nas configurações do \textit{gitLab}.
+
+Em \textbf{\textit{1}} na figura \ref{criandorep3}, você pode escolher o tipo de protocolo que você irá usar para conectar seu repositório local com o remoto. Em \textbf{\textit{2}}  você pode manipular seu repositório remotamente, criando novos arquivos, novos branches, informando problemas, entre outras opções. Lembre-se que as alterações feitas no repositório remoto não altera o conteúdo do repositório local, a não ser que você utlize comandos no \textit{git} para isso, um \textit{git pull} por exemplo (esse comando será descrito mais a frente).
+
+\begin{figure}[h]
+	\caption{\label{criandorep3}Criando repositório - 3ª etapa}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{criandorep3}
+	\end{center}
+	\legend{Fonte: (Do autor)}
+\end{figure}
+
+Se você observar o \textit{git} está sempre dando dicas. Com o \textit{gitLab} não é diferente. Um exemplo disso está representado na figura \ref{criandorep4}. O \textit{gitLab} exibe diversas opções para você conectar seu repositório remoto com o repositório local. 
+
+Na primeira etapa da figura \ref{criandorep4} você irá realizar a configuração inicial do git, se você vem seguindo a apostila desde os primeiros capítulos, esse processo de configuração já foi realizado na seção \ref{configinicial}. As etapas 2, 3 e 4, serão casos situacionais. 
+
+A etapa 2 deve ser usada quando não existe um repositório local. A primeira linha da etapa 2 irá criar um repositório local, a partir do repositório remoto, na pasta atual em que seu console se encontra. A segunda linha serve para acessar a pasta do repositório. A terceira linha (opcional) criará um arquivo em branco com o nome \textit{README.md}. A quarta linha como já devem saber adiciona o arquivo \textit{README.md} para o terceiro estágio. A quinta linha realizará o commit. E a última linha irá adionar o arquivo \textit{README.md} que foi criado localmente para o repositório remoto, ao \textit{branch master} remoto.
+
+A etapa 3 deve ser utilizada quando você quer iniciar um repositório local e, em seguida fazer a conexão do repositório criado localmente com o repositório remoto. A primeira linha serve para acessar a pasta do repositório. A segunda é utlizada para criar o repositório local. A terceira linha será responsável em estabelecer a conexão entre o repositório local e o remoto. As linhas seguintes vocês já sabem suas devidas aplicações.
+
+A etapa 4 deve ser usada quando já existe um repositório criado localmente. Novamente, a segunda linha irá estabelecer a conexão entre os repositórios. A terceira linha adionará todos os branches locais ao repositório remoto. A quarta linha (opcional) irá adiconar todas as tags criadas, caso existam.
+
+Lembre-se de verificar os tipos de protocolos que estão utilizando. Se tiver em dúvida em qual utilizar opte pelo protocolo \textit{HTTPS}. Lembre-se também de configurar o proxy do seu local de trabalho caso seja necessário.
+
+
+
+\begin{figure}[h]
+	\caption{\label{criandorep4}Criando repositório - 4ª etapa}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{criandorep4}
+	\end{center}
+	\legend{Fonte: (Do autor)}
+\end{figure}
+
+\section{Realizando seu primeiro push}
+
 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\nocite{envelhecimento}
