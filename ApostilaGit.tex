@@ -612,7 +612,7 @@ Abaixo seguem outros comandos para vocês experimentarem:
 
 Na figura \ref{logp} as linhas que começam com um símbolo de mais(+) indica alg:wo que foi adicionado. Se começar com o símbolo de menos($-$) significa que algo foi retirado. Os números entre os símbolos de (@), indicam as posições das linhas, onde houveram alterações. Quando vocês estiverem praticando, isso ficará mais claro.
 
-\section{Criando branches}
+\section{Criando branches \label{criandobranch}}
 
 Para criar um novo \textit{branch}, usamos o comando \textit{git checkout -b nomeBranch}. Onde \textit{nomeBranch} deve ser substituído pelo nome do \textit{branch} que você quer criar. Vale resaltar que um \textit{branch} é sempre criado baseado no \textit{branch} atual, ou seja, se você estiver no\textit{ branch master}, o novo \textit{branch} será um clone do \textit{branch master}, ver figura \ref{novobranch}.
 
@@ -730,6 +730,8 @@ Na seção \ref{gitlab} falei brevemente sobre o \textit{gitLab}, Nesse capítul
 
 Antes de começar a usar os comandos das próximas seções, será necessário a criação de uma conta no \textit{gitLab}.
 
+\section{Criando seu primeiro repositório remoto}
+
 Com o \textit{gitLab} aberto siga as intruções da figura \ref{criandorep1} para iniciar o processo de criação do seu primeiro repositório. Em \textbf{\textit{1}} você irá abrir as opções para a criação do novo repositório. Em \textbf{\textit{2}} você irá selecionar \textit{New project}, a continuação segue nas figuras subsequentes.
 
 \begin{figure}[h]
@@ -774,8 +776,6 @@ A etapa 4 deve ser usada quando já existe um repositório criado localmente. No
 
 Lembre-se de verificar os tipos de protocolos que estão utilizando. Se tiver em dúvida em qual utilizar opte pelo protocolo \textit{HTTPS}. Lembre-se também de configurar o proxy do seu local de trabalho caso seja necessário.
 
-
-
 \begin{figure}[h]
 	\caption{\label{criandorep4}Criando repositório - 4ª etapa}
 	\begin{center}
@@ -784,8 +784,37 @@ Lembre-se de verificar os tipos de protocolos que estão utilizando. Se tiver em
 	\legend{Fonte: (Do autor)}
 \end{figure}
 
-\section{Realizando seu primeiro push}
+\section{Realizando seu primeiro \textit{push}}
 
+O push (empurrar) é o ato de fazer o upload do seu projeto local para um repositório remoto. O \textit{push} só funcionará corretamente se o seu repositório local estiver conectado com o repositório remoto. Essa conexão é realizada com um comando do tipo \verb|git remote add origin ENDEREÇO_DO_REPOSITÓRIO_REMOTO|, esse endereço encontra-se na primeira etapa da figura \ref{criandorep3}. O \textit{origin} não faz parte do comando, ele é o nome padrão dados aos repositórios remotos, mas nada impede de você utlizar outro nome, o aconselhado pela comunidade é manter como \textit{origin}.
+
+Os principais comandos para realizar um push serão descritos a seguir:
+
+\begin{itemize}
+	\item \verb|git push -u origin master|, sobe o \textit{branch master} para o repositório remoto, usei como exemplo o master, mas você pode usar qualquer outro \textit{branch} que tenha criado;
+	\item \verb|git push -u origin cadastroDeUsuarios|, sobe o branch cadastro de usuários;
+	\item \verb|git push -u origin --tags|, sobe as tags criadas (haverá uma seção apenas para tags).
+\end{itemize}
+
+\section{Realizando seu primeiro clone}
+
+Realizar um clone é necessário quando você precisa duplicar um repositório remoto para sua máquina. Por exemplo, quando você deleta seu repositório local, ou quando você encontra um projeto opensource e quer utilizá-lo, ou ainda mesmo quando alguém rouba sua máquina e seu projeto está nele, mas nesse último caso só irá funcionar se você estiver usando o git corretamente.
+
+Para fazer um clone é necessário apenas duas condições, o endereço do repositório e obviamente permissão para fazer tal processo. Se o projeto for público você pode fazer o repositório sem pedir a permissão do dono. Abaixo segue os dois principais comandos para realizar um clone:
+
+\begin{itemize}
+	\item \verb|git clone ENDEREÇO_DO_REPOSITÓRIO_REMOTO|
+	\item \verb|git clone https://gitlab.com/.../meu-primeiro-repositorio.git|, irá fazer um clone e copiar seus arquivos para a pasta com o nome do repositório, nesse caso \textit{meu-primeiro-repositorio.git};
+	\item \verb|git clone https://gitlab.com/.../meu-primeiro-repositorio.git Test1|, irá fazer o mesmo que o comando anterior, porém irá adicionar os arquivos para a pasta \textit{Test1}.
+\end{itemize}
+
+\section{Criando um branch a partir do repositório remoto}
+
+Vocês já sabem criar um \textit{branch} a partir de um \textit{branch} local. Nessa seção vamos supor que você tenha criado um branch remotamente, como mostra na segunda etapa da figura \ref{criandorep3}. Por padrão o git cria um \textit{branch} baseado no seu \textit{branch} atual com o comando \verb|git checkout -b nomeDoBranch|, o comando para criar um branch local a partir de um branch remoto é muito semelhante, ele está descrito abaixo:
+
+\begin{itemize}
+	\item \verb|git checkout -b test1 origin/test2|, cria um branch localmente com o nome \textit{test1} a partir do \textit{branch} remoto \textit{test2}, o comando para visualizar o nome do branch remoto foi descrito na seção \ref{criandobranch}.	
+\end{itemize}
 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\nocite{envelhecimento}
