@@ -862,25 +862,86 @@ A seguir estão descritos outros comandos relacionados com as tags:
 	\item \verb|git push --tags|, sobe as tags criadas para o repositório remoto.
 \end{itemize}
 
+\section{Resolvendo conflitos}
+
+Nem tudo são flores quando falamos do controle de versões. As vezes acontece de ter mais de um desenvolvedor editando o mesmo código, e quando é necessário fazer um merge, o sistema de controle de versão não tem como advinhar qual código deve ser mantido. Existem diversos cenários para falar sobre conflitos. 
+
+Esse assunto é tão complexo que cada empresa tem uma maneira diferente de lidar. Para exemplificar isso, existem dois tipos de visões, uma é a visão pessimista, onde o código só pode ser editado por um desenvolvedor, e os outros podem apenas ler o arquivo, ou seja, não possuem permissão de escrita. A vantagem disso é que, nesse cenário não existe o risco de ocorrer tais conflitos. Já a visão otimista é aquela onde o código pode ser editado por diversos desenvolvedores e, quando chegar na hora de realizar o merge, o desenvolvedor irá comparar os códigos decidindo quais mudanças deverão permanecer. A vantagem nessa ótica otimista é que a evolução do projeto torna-se algo mais fluida. 
+
+Vamos imaginar o seguinte cenário, existem dois branches idênticos, o \textit{branch exemplo0} e o \textit{branch exemplo1}, ambos com um arquivo em branco chamado \textit{wtf}. O desenvolvedor A tem acesso ao \textit{branch exemplo0} e o desenvolvedor B ao outro \textit{branch}.
+
+O desenvolvedor A adiciona ao arquivo wtf, o seguinte conteúdo e depois faz um commit:
+
+\begin{verbatim}
+Java é a melhor linguagem de todas,
+ela é super rápida, fácil de aprender e leve.
+JAVA É VIDA! O NOME DO MEU FILHO VAI SER JAVA!
+\end{verbatim}
+
+O outro desenvolvedor adiciona o seguinte conteúdo ao arquivo wtf e também faz um commit:$$ \verb|Python é legal.|$$
+
+Agora existem dois \textit{branches} com o mesmo arquivo, mas com conteúdos diferentes (ver figura \ref{conflito1}) e, em \textit{commits} distintos. 
+
+\begin{figure}[h]
+	\caption{\label{conflito1}Resolvendo conflito - parte 1}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{conflito1}
+	\end{center}
+	\legend{Fonte: (Do autor)}
+\end{figure}
+
+O desenvolvedor A resolve fazer um \textit{merge} do \textit{branch} do desenvolvedor B, e acaba se deparando com a seguinte mensagem (ver figura \ref{conflito2}): $$\verb|CONFLITO (adicionar/adicionar): conflito de mesclagem em wtf|$$
+
+\begin{figure}[h]
+	\caption{\label{conflito2}Resolvendo conflito - parte 2}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{conflito2}
+	\end{center}
+	\legend{Fonte: (Do autor)}
+\end{figure}
+
+Se vocês observaram o branch atual após o merge passou a ser \textit{exemplo0|MERGING}. Nessa branch o conteúdo do arquivo wtf (ver figura \ref{conflito3}), é a união dos dois conteúdos, e o desenvolvedor terá que decidir qual código irá permanecer. 
+
+\begin{figure}[h]
+	\caption{\label{conflito3}Resolvendo conflito - parte 3}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{conflito3}
+	\end{center}
+	\legend{Fonte: (Do autor)}
+\end{figure}
+
+O desenvolvedor A então edita o arquivo wtf e mantém o conteúdo do desenvolvedor B.  Após alterar o conteúdo ele faz um novo \textit{commit} e, todos os conflito são resolvidos, tanto do código, quanto o ``conflito'' do desenvolvedor A (piada muito boa, eu sei!), ver figura \ref{conflito4}.
+
+\begin{figure}[H]
+	\caption{\label{conflito4}Resolvendo conflito - parte 4}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{conflito4}
+	\end{center}
+	\legend{Fonte: (Do autor)}
+\end{figure}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\nocite{envelhecimento}
-%\nocite{alice}
-%\nocite{camarano}
-%\nocite{constant}
-%\nocite{karen}
-%\nocite{secher}
-%\nocite{Shimizu}
-%\nocite{pompeo}
-%\nocite{botelho}
-%\nocite{moura}
-%\nocite{trompieri}
-%\nocite{anderson}
-%\nocite{azevedo}
-%\nocite{boer}
-%\nocite{thomas}
-%\nocite{shils}
-%\nocite{raj}
-%\nocite{kossioni}
+
+\nocite{book}
+\nocite{gitlab}
+\nocite{gitflow}
+\nocite{semver}
+\nocite{gitready}
+\nocite{stackoverflow}
+\nocite{atlassian}
+\nocite{ndpsoftware}
+\nocite{rogerdudler}
+\nocite{danielkummer}
+\nocite{nvie}
+\nocite{cgti}
+\nocite{moura}
+\nocite{wikiversity}
+\nocite{stackoverflow2}
+\nocite{tribo}
+\nocite{devmedia1}
+\nocite{devmedia2}
+\nocite{marklodato}
+
 %\nocite{eisele}
 %\nocite{gille}
 %\nocite{carvalho}
@@ -899,6 +960,6 @@ A seguir estão descritos outros comandos relacionados com as tags:
 %\nocite{rezende}
 %\nocite{perovano}
 %
-%\bibliography{biblio}
+\bibliography{biblio}
 	 		
 \end{document}
