@@ -295,7 +295,7 @@ O Git é a ferramenta que você utilizará para fazer todo o controle de versão
 
 Desde 2005 quando o Git foi criado, ele passou por um longo período de evolução e ainda continua. Hoje ele está em uma versão estável oferecendo todas as \textit{features} citadas acima.
 
-\section{O GitLab}
+\section{O GitLab \label{gitlab}}
 
 O GitLab nada mais é que um gerenciador de repositório \textit{git} remoto. O \textit{Gitlab} apresenta algumas vantagens em relação ao \textit{Github}:
 
@@ -411,7 +411,7 @@ Já o \textit{branch bugfix}, ele deve ser criado quando um \textit{bug} é enco
 
 Nessa etapa vamos supor que todos estejam com o Git e o Git-flow instalados, caso haja a necessidade de um guia para as instalações, esse será adicionado como apêncide no final livro em futuras versões.
 
-\section{Configuração inicial}
+\section{Configuração inicial \label{configinicial}}
 
 O primeiro passo é abrir seu console preferido, se estiverem no Linux ou macOS, abram o terminal. Se estiverem utilizando o Windows, podem utilizar o Git Bash, que é instaldo com o Git. Ainda para usuários Windows, uma dica que eu dou é usar o Cmder, é um console free e muito mais agradável de se trabalhar, e não prescisa ser instaldo, apenas ser baixado, ver figura \ref{cmder}. Sugiro também não utilizar o MS-DOS, nem o PowerShell.
 
@@ -547,7 +547,7 @@ Existem duas principais maneiras de realizar um \textit{commit}, na figura \ref{
 	\legend{Fonte: (Do autor)}
 \end{figure}
 
-A primeira maneira deve ser usada quando você fez poucas alterações, e você consegue descrever todas esses mudanças em apenas uma linha usado o commando \textit{git commit -m "comentario"}. A segunda maneira deve ser usada quando for preciso descrever diversas alterações e, apenas uma linha não basta. Uma dica é, evite usar acentuação dentro dos comentários, quando a acentuação é usada, algumas vezes quando você for visualizar os commits, a acentuação poderá não ser reconhecida pelo console.
+A primeira maneira deve ser usada quando você fez poucas alterações, e você consegue descrever todas esses mudanças em apenas uma linha usado o commando \textit{git commit -m "comentario"}. A segunda maneira deve ser usada quando for preciso descrever diversas alterações e apenas uma linha não basta. Uma dica é, evite usar acentuação dentro dos comentários, quando a acentuação é usada, algumas vezes quando você for visualizar os commits, a acentuação poderá não ser reconhecida pelo console.
 
 \chapter{Comandos mais usados no git}
 
@@ -612,7 +612,7 @@ Abaixo seguem outros comandos para vocês experimentarem:
 
 Na figura \ref{logp} as linhas que começam com um símbolo de mais(+) indica alg:wo que foi adicionado. Se começar com o símbolo de menos($-$) significa que algo foi retirado. Os números entre os símbolos de (@), indicam as posições das linhas, onde houveram alterações. Quando vocês estiverem praticando, isso ficará mais claro.
 
-\section{Criando branches}
+\section{Criando branches \label{criandobranch}}
 
 Para criar um novo \textit{branch}, usamos o comando \textit{git checkout -b nomeBranch}. Onde \textit{nomeBranch} deve ser substituído pelo nome do \textit{branch} que você quer criar. Vale resaltar que um \textit{branch} é sempre criado baseado no \textit{branch} atual, ou seja, se você estiver no\textit{ branch master}, o novo \textit{branch} será um clone do \textit{branch master}, ver figura \ref{novobranch}.
 
@@ -639,9 +639,9 @@ Mesclar branches na maioria das vezes é uma tarefa fácil. Porém algumas vezes
 
 \subsection{Mesclando usando o merge}
 
-O comando para usar o merge é  \verb|git merge funcionalidade1|. Ele irá mesclar o \textit{branch funcionalidade1} com o \textit{branch atual}.
+O comando $$\verb|git merge funcionalidade1|$$ é usado para realizar o merge. Ele irá mesclar o \textit{branch funcionalidade1} com o \textit{branch atual}.
 
-A vantagem do merge é que ele preserva um histórico completo do seu projeto e, evita problemas quando está trabalhando em grupo(ver figura \ref{merge}).
+A vantagem do merge é que ele preserva um histórico completo do seu projeto e, evita problemas quando está trabalhando em equipe(ver figura \ref{merge}).
 
 \begin{figure}[H]
 	\caption{\label{merge}Mesclando usando o merge}
@@ -663,7 +663,7 @@ O rebase preserva um histórico mais limpo e linear do seu projeto, porém ao tr
 	\legend{Fonte: (https://stackoverflow.com/questions/16666089)}
 \end{figure}
 
-O rebase é aconselhado apenas quando você está trabalhando localmente, a não ser que você saiba o que está fazaendo. Caso contrário, use sempre o merge. A documentação do git descreve diversos parâmetros que podem e devem ser usados, tanto para o rebase e para o merge.
+O rebase é aconselhado apenas quando você está trabalhando localmente, a não ser que você saiba o que está fazendo. Caso contrário, use sempre o merge. A documentação do git descreve diversos parâmetros que podem e devem ser usados, tanto para o rebase e para o merge.
 
 \section{Voltando versões}
 
@@ -700,7 +700,7 @@ Geralmente tem arquivos que são criados automaticamente durante um projeto, por
 Para impedir que alguns arquivos fiquem aparecendo ao visualizar o status, o git trabalha com o arquivo \textbf{.gitignore}. Esse arquivo é criado na raiz do projeto e, contém os nomes dos arquivos a serem ignorados, ver figura \ref{gitignore}. 
 
 \begin{figure}[h]
-	\caption{\label{gitignore}Ignorando arquivo}
+	\caption{\label{gitignore}Ignorando arquivos}
 	\begin{center}
 		\includegraphics[width=1\linewidth]{gitignore}
 	\end{center}
@@ -708,6 +708,8 @@ Para impedir que alguns arquivos fiquem aparecendo ao visualizar o status, o git
 \end{figure}
 
 No exemplo da figura \ref{gitignore}, os arquivos \textit{idea.log} e \textit{test.aux}, não aparecerão mais no status. Todos os arquivos que terminarem com a extensão \textbf{.lot} ou apresentarem a extensão \textbf{.tar}, por exemplo \textit{ubuntuMobile.tar.xz}, também serão ignorados. 
+
+\textit{\textbf{Observação:}} Se um arquivo já tiver sido adicionado para o segundo estágio em algum momento do desenvolvimento, ele não será ignorado, mesmo que o nome do arquivo esteja presente no \textbf{.gitignore}. Se esse for o caso, o comando $$\verb|git rm --cached nomeDoArquivo|$$ irá retirar o arquivo do segundo estágio, ou seja, do monitoramento e, a partir disso ele passará a ser ignorado normalmente, caso queira retirar uma pasta completa, use o comando $$\verb|git rm -r --cached nomeDaPasta|$$ experimente ambos como prática.
 
 
 \subsection{Alterando o proxy \label{alterandoproxy}}
@@ -726,9 +728,141 @@ Os principais comandos para alteração do proxy são:
 
 \chapter{Trabalhando com repositório remoto}
 
+Na seção \ref{gitlab} falei brevemente sobre o \textit{gitLab}, Nesse capítulo iremos estudar como o \textit{git} se comporta trabalhando com repositórios remotos e faleremos sobre algumas características do \textit{gitLab}.
+
+Antes de começar a usar os comandos das próximas seções, será necessário a criação de uma conta no \textit{gitLab}.
+
+\section{Criando seu primeiro repositório remoto}
+
+Com o \textit{gitLab} aberto siga as intruções da figura \ref{criandorep1} para iniciar o processo de criação do seu primeiro repositório. Em \textbf{\textit{1}} você irá abrir as opções para a criação do novo repositório. Em \textbf{\textit{2}} você irá selecionar \textit{New project}, a continuação segue nas figuras subsequentes.
+
+\begin{figure}[h]
+	\caption{\label{criandorep1}Criando repositório - 1ª etapa}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{criandorep1}
+	\end{center}
+	\legend{Fonte: (Do autor)}
+\end{figure}
+
+Continuando na figura \ref{criandorep2}, em \textbf{\textit{1}} você irá adicionar o nome do repositório, não necessariamente sendo igual ao repositório local. Em \textbf{\textit{2}} exibe as opções de visibilidade do projeto, não tendo relação alguma com as permissões do projeto. Em \textbf{\textit{3}} aperte em \textit{Create project}.
+
+\begin{figure}[h]
+	\caption{\label{criandorep2}Criando repositório - 2ª etapa}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{criandorep2}
+	\end{center}
+	\legend{Fonte: (Do autor)}
+\end{figure}
+
+O \textit{git} pode se comunicar com os repositórios remotos atráves de dois tipos de protocolos, podendo ser o \textit{HTTPS} e o \textit{SSH}. Com o \textit{HTTPS} não é necessário uma configuração prévia (salvas algumas exceções, como o proxy, dependendo do caso) para iniciar seu uso, enquanto o \textit{SSH} só irá funcionar se você adicionar sua chava pública \textit{SSH} nas configurações do \textit{gitLab}.
+
+Em \textbf{\textit{1}} na figura \ref{criandorep3}, você pode escolher o tipo de protocolo que você irá usar para conectar seu repositório local com o remoto. Em \textbf{\textit{2}}  você pode manipular seu repositório remotamente, criando novos arquivos, novos branches, informando problemas, entre outras opções. Lembre-se que as alterações feitas no repositório remoto não altera o conteúdo do repositório local, a não ser que você utlize comandos no \textit{git} para isso, um \textit{git pull} por exemplo (esse comando será descrito mais a frente).
+
+\begin{figure}[h]
+	\caption{\label{criandorep3}Criando repositório - 3ª etapa}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{criandorep3}
+	\end{center}
+	\legend{Fonte: (Do autor)}
+\end{figure}
+
+Se você observar o \textit{git} está sempre dando dicas. Com o \textit{gitLab} não é diferente. Um exemplo disso está representado na figura \ref{criandorep4}. O \textit{gitLab} exibe diversas opções para você conectar seu repositório remoto com o repositório local. 
+
+Na primeira etapa da figura \ref{criandorep4} você irá realizar a configuração inicial do git, se você vem seguindo a apostila desde os primeiros capítulos, esse processo de configuração já foi realizado na seção \ref{configinicial}. As etapas 2, 3 e 4, serão casos situacionais. 
+
+A etapa 2 deve ser usada quando não existe um repositório local. A primeira linha da etapa 2 irá criar um repositório local, a partir do repositório remoto, na pasta atual em que seu console se encontra. A segunda linha serve para acessar a pasta do repositório. A terceira linha (opcional) criará um arquivo em branco com o nome \textit{README.md}. A quarta linha como já devem saber adiciona o arquivo \textit{README.md} para o terceiro estágio. A quinta linha realizará o commit. E a última linha irá adionar o arquivo \textit{README.md} que foi criado localmente para o repositório remoto, ao \textit{branch master} remoto.
+
+A etapa 3 deve ser utilizada quando você quer iniciar um repositório local e, em seguida fazer a conexão do repositório criado localmente com o repositório remoto. A primeira linha serve para acessar a pasta do repositório. A segunda é utlizada para criar o repositório local. A terceira linha será responsável em estabelecer a conexão entre o repositório local e o remoto. As linhas seguintes vocês já sabem suas devidas aplicações.
+
+A etapa 4 deve ser usada quando já existe um repositório criado localmente. Novamente, a segunda linha irá estabelecer a conexão entre os repositórios. A terceira linha adionará todos os branches locais ao repositório remoto. A quarta linha (opcional) irá adiconar todas as tags criadas, caso existam.
+
+Lembre-se de verificar os tipos de protocolos que estão utilizando. Se tiver em dúvida em qual utilizar opte pelo protocolo \textit{HTTPS}. Lembre-se também de configurar o proxy do seu local de trabalho caso seja necessário.
+
+\begin{figure}[h]
+	\caption{\label{criandorep4}Criando repositório - 4ª etapa}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{criandorep4}
+	\end{center}
+	\legend{Fonte: (Do autor)}
+\end{figure}
+
+\section{Realizando seu primeiro \textit{push}}
+
+O push (empurrar) é o ato de fazer o upload do seu projeto local para um repositório remoto. O \textit{push} só funcionará corretamente se o seu repositório local estiver conectado com o repositório remoto. Essa conexão é realizada com um comando do tipo \verb|git remote add origin ENDEREÇO_DO_REPOSITÓRIO_REMOTO|, esse endereço encontra-se na primeira etapa da figura \ref{criandorep3}. O \textit{origin} não faz parte do comando, ele é o nome padrão dados aos repositórios remotos, mas nada impede de você utlizar outro nome, o aconselhado pela comunidade é manter como \textit{origin}.
+
+Os principais comandos para realizar um push serão descritos a seguir:
+
+\begin{itemize}
+	\item \verb|git push -u origin master|, sobe o \textit{branch master} para o repositório remoto, usei como exemplo o master, mas você pode usar qualquer outro \textit{branch} que tenha criado;
+	\item \verb|git push -u origin cadastroDeUsuarios|, sobe o branch cadastro de usuários;
+	\item \verb|git push -u origin --tags|, sobe as tags criadas (haverá uma seção apenas para tags).
+\end{itemize}
+
+\section{Realizando seu primeiro clone}
+
+Realizar um clone é necessário quando você precisa duplicar um repositório remoto para sua máquina. Por exemplo, quando você deleta seu repositório local, ou quando você encontra um projeto opensource e quer utilizá-lo, ou ainda mesmo quando alguém rouba sua máquina e seu projeto está nele, mas nesse último caso só irá funcionar se você estiver usando o git corretamente.
+
+Para fazer um clone é necessário apenas duas condições, o endereço do repositório e obviamente permissão para fazer tal processo. Se o projeto for público você pode fazer o clone do repositório sem pedir a permissão ao dono. Abaixo segue os dois principais comandos para realizar um clone:
+
+\begin{itemize}
+	\item \verb|git clone ENDEREÇO_DO_REPOSITÓRIO_REMOTO|
+	\item \verb|git clone https://gitlab.com/.../meu-primeiro-repositorio.git|, irá fazer um clone e copiar seus arquivos para a pasta com o nome do repositório, nesse caso \textit{meu-primeiro-repositorio.git};
+	\item \verb|git clone https://gitlab.com/.../meu-primeiro-repositorio.git Test1|, irá fazer o mesmo que o comando anterior, porém irá adicionar os arquivos para a pasta \textit{Test1}.
+\end{itemize}
+
+\section{Criando um branch a partir do repositório remoto}
+
+Vocês já sabem criar um \textit{branch} a partir de um \textit{branch} local. Nessa seção vamos supor que você tenha criado um branch remotamente, como mostra na segunda etapa da figura \ref{criandorep3}. Por padrão o git cria um \textit{branch} baseado no seu \textit{branch} atual com o comando \verb|git checkout -b nomeDoBranch|, o comando para criar um branch local a partir de um branch remoto é muito semelhante, ele está descrito abaixo:
+
+\begin{itemize}
+	\item \verb|git checkout -b test1 origin/test2|, cria um branch localmente com o nome \textit{test1} a partir do \textit{branch} remoto \textit{test2}, o comando para visualizar o nome do branch remoto foi descrito na seção \ref{criandobranch}.	
+\end{itemize}
+
+\section{Realizando seu primeiro \textit{pull}}
+
+O \textit{pull} faz o trabalho inverso do \textit{push}, enquanto o \textit{push} sobe seu arquivos do repositório local para o repositório remoto, o \textit{pull} desce os arquivos que estão no repositório remoto para o repositório local. 
+
+Os principais comandos para realizar um pull serão descritos a seguir:
+
+\begin{itemize}
+	\item \verb|git pull origin master|, desce os arquivos do \textit{branch master} localizado remotamente para o \textit{branch} local atual;
+	\item \verb|git pull|, esse comando é usado quando para atualizar a lista de branches, por exemplo, vamos supor que você tenha criado um \textit{branch} remotamente, esse novo \textit{branch} criado não será exibido na sua máquina local até você atualizar a lista (o comando para visualizar os branches está descrito na seção \ref{criandobranch}).
+\end{itemize}
+
+\section{Trabalhando com \textit{tags}}
+
+As tags são os rótulos dados para as versões. Geralmente esses rótulos são numéricos, 1.2.1 por exemplo, vocês provavelmente já viram algumas tags de pré-lançamento (pre-release) usando nomes de letras gregas, versão 1.0.0-alpha ou versão 1.0.0-beta. Para manter um nível de organização, iremos adotar as regras do versionamento semântico para a criação das tags, tais regras são adotadas pela maioria das empresas, comunidades e desenvolvedores.
+
+\subsection{Versionamento Semântico \label{semver}}
+
+O versionamento semântico consiste em um conjunto de 11 regras bem especificadas. Eu irei falar a essência do versionamênto semântico, e fica como pesquisa para vocês saberem mais na \hyperref{http://semver.org/lang/pt-BR/}{}{}{documentação} completa.
+
+Abaixo está descrito um resumo do que consiste o versionamento semântico. Dado um número da versão \texttt{MAJOR.MINOR.PATCH}:
+
+\begin{enumerate}
+	\item versão Maior(\texttt{MAJOR}): quando fizer mudanças incompatíveis na API;
+	\item versão Menor(\texttt{MINOR}): quando adicionar funcionalidades mantendo compatibilidade;
+	\item versão de Correção(\texttt{PATCH}): quando corrigir falhas mantendo compatibilidade.
+\end{enumerate}
+
+A versão \texttt{MINOR} tem que garantir compatibilidade apenas com a versão \texttt{MAJOR}. A versão de correção (\texttt{PATCH}) tem que garantir compatibilidade com todas as versões acima dela. Se por exemplo, ocorrer quebra de compatibilidade quando a correção de um \textit{bug} for feita, deve ser criada uma nova versão \texttt{MINOR}. Esses e outros detalhes estão especificados na documentação.
 
 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Rótulos adicionais para pré-lançamento(pre-release) e metadados de construção(build) estão disponíveis como extensão ao formato \texttt{MAJOR.MINOR.PATCH}.
+
+\subsection{Criando \textit{tags} com o \textit{git}}
+
+Para criar uma \textit{tag} usando o \textit{git} basta usar o comando $$\verb|git tag X.Y.Z|$$ onde as letras \texttt{X}, \texttt{Y} e \texttt{Z} devem ser substituídas pelo número da versão seguindo as regras do versionamento semântico visto na seção \ref{semver}.
+
+A seguir estão descritos outros comandos relacionados com as tags:
+
+\begin{itemize}
+	\item \verb|git tag -l|, exibe as tags criadas;
+	\item \verb|git tag|, outra maneira de exibir as tags criadas;
+	\item \verb|git push --tags|, sobe as tags criadas para o repositório remoto.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\nocite{envelhecimento}
 %\nocite{alice}
 %\nocite{camarano}
