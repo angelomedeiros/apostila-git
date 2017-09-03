@@ -639,9 +639,9 @@ Mesclar branches na maioria das vezes é uma tarefa fácil. Porém algumas vezes
 
 \subsection{Mesclando usando o merge}
 
-O comando para usar o merge é  \verb|git merge funcionalidade1|. Ele irá mesclar o \textit{branch funcionalidade1} com o \textit{branch atual}.
+O comando $$\verb|git merge funcionalidade1|$$ é usado para realizar o merge. Ele irá mesclar o \textit{branch funcionalidade1} com o \textit{branch atual}.
 
-A vantagem do merge é que ele preserva um histórico completo do seu projeto e, evita problemas quando está trabalhando em grupo(ver figura \ref{merge}).
+A vantagem do merge é que ele preserva um histórico completo do seu projeto e, evita problemas quando está trabalhando em equipe(ver figura \ref{merge}).
 
 \begin{figure}[H]
 	\caption{\label{merge}Mesclando usando o merge}
@@ -663,7 +663,7 @@ O rebase preserva um histórico mais limpo e linear do seu projeto, porém ao tr
 	\legend{Fonte: (https://stackoverflow.com/questions/16666089)}
 \end{figure}
 
-O rebase é aconselhado apenas quando você está trabalhando localmente, a não ser que você saiba o que está fazaendo. Caso contrário, use sempre o merge. A documentação do git descreve diversos parâmetros que podem e devem ser usados, tanto para o rebase e para o merge.
+O rebase é aconselhado apenas quando você está trabalhando localmente, a não ser que você saiba o que está fazendo. Caso contrário, use sempre o merge. A documentação do git descreve diversos parâmetros que podem e devem ser usados, tanto para o rebase e para o merge.
 
 \section{Voltando versões}
 
@@ -708,6 +708,8 @@ Para impedir que alguns arquivos fiquem aparecendo ao visualizar o status, o git
 \end{figure}
 
 No exemplo da figura \ref{gitignore}, os arquivos \textit{idea.log} e \textit{test.aux}, não aparecerão mais no status. Todos os arquivos que terminarem com a extensão \textbf{.lot} ou apresentarem a extensão \textbf{.tar}, por exemplo \textit{ubuntuMobile.tar.xz}, também serão ignorados. 
+
+\textit{\textbf{Observação:}} Se um arquivo já tiver sido adicionado para o segundo estágio em algum momento do desenvolvimento, ele não será ignorado, mesmo que o nome do arquivo esteja presente no \textbf{.gitignore}. Se esse for o caso, o comando $$\verb|git rm --cached nomeDoArquivo|$$ irá retirar o arquivo do segundo estágio, ou seja, do monitoramento e, a partir disso ele passará a ser ignorado normalmente, caso queira retirar uma pasta completa, use o comando $$\verb|git rm -r --cached nomeDaPasta|$$ experimente ambos como prática.
 
 
 \subsection{Alterando o proxy \label{alterandoproxy}}
@@ -800,7 +802,7 @@ Os principais comandos para realizar um push serão descritos a seguir:
 
 Realizar um clone é necessário quando você precisa duplicar um repositório remoto para sua máquina. Por exemplo, quando você deleta seu repositório local, ou quando você encontra um projeto opensource e quer utilizá-lo, ou ainda mesmo quando alguém rouba sua máquina e seu projeto está nele, mas nesse último caso só irá funcionar se você estiver usando o git corretamente.
 
-Para fazer um clone é necessário apenas duas condições, o endereço do repositório e obviamente permissão para fazer tal processo. Se o projeto for público você pode fazer o repositório sem pedir a permissão do dono. Abaixo segue os dois principais comandos para realizar um clone:
+Para fazer um clone é necessário apenas duas condições, o endereço do repositório e obviamente permissão para fazer tal processo. Se o projeto for público você pode fazer o clone do repositório sem pedir a permissão ao dono. Abaixo segue os dois principais comandos para realizar um clone:
 
 \begin{itemize}
 	\item \verb|git clone ENDEREÇO_DO_REPOSITÓRIO_REMOTO|
@@ -816,7 +818,51 @@ Vocês já sabem criar um \textit{branch} a partir de um \textit{branch} local. 
 	\item \verb|git checkout -b test1 origin/test2|, cria um branch localmente com o nome \textit{test1} a partir do \textit{branch} remoto \textit{test2}, o comando para visualizar o nome do branch remoto foi descrito na seção \ref{criandobranch}.	
 \end{itemize}
 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Realizando seu primeiro \textit{pull}}
+
+O \textit{pull} faz o trabalho inverso do \textit{push}, enquanto o \textit{push} sobe seu arquivos do repositório local para o repositório remoto, o \textit{pull} desce os arquivos que estão no repositório remoto para o repositório local. 
+
+Os principais comandos para realizar um pull serão descritos a seguir:
+
+\begin{itemize}
+	\item \verb|git pull origin master|, desce os arquivos do \textit{branch master} localizado remotamente para o \textit{branch} local atual;
+	\item \verb|git pull|, esse comando é usado quando para atualizar a lista de branches, por exemplo, vamos supor que você tenha criado um \textit{branch} remotamente, esse novo \textit{branch} criado não será exibido na sua máquina local até você atualizar a lista (o comando para visualizar os branches está descrito na seção \ref{criandobranch}).
+\end{itemize}
+
+\section{Trabalhando com \textit{tags}}
+
+As tags são os rótulos dados para as versões. Geralmente esses rótulos são numéricos, 1.2.1 por exemplo, vocês provavelmente já viram algumas tags de pré-lançamento (pre-release) usando nomes de letras gregas, versão 1.0.0-alpha ou versão 1.0.0-beta. Para manter um nível de organização, iremos adotar as regras do versionamento semântico para a criação das tags, tais regras são adotadas pela maioria das empresas, comunidades e desenvolvedores.
+
+\subsection{Versionamento Semântico \label{semver}}
+
+O versionamento semântico consiste em um conjunto de 11 regras bem especificadas. Eu irei falar a essência do versionamênto semântico, e fica como pesquisa para vocês saberem mais na \hyperref{http://semver.org/lang/pt-BR/}{}{}{documentação} completa.
+
+Abaixo está descrito um resumo do que consiste o versionamento semântico. Dado um número da versão \texttt{MAJOR.MINOR.PATCH}:
+
+\begin{enumerate}
+	\item versão Maior(\texttt{MAJOR}): quando fizer mudanças incompatíveis na API;
+	\item versão Menor(\texttt{MINOR}): quando adicionar funcionalidades mantendo compatibilidade;
+	\item versão de Correção(\texttt{PATCH}): quando corrigir falhas mantendo compatibilidade.
+\end{enumerate}
+
+A versão \texttt{MINOR} tem que garantir compatibilidade apenas com a versão \texttt{MAJOR}. A versão de correção (\texttt{PATCH}) tem que garantir compatibilidade com todas as versões acima dela. Se por exemplo, ocorrer quebra de compatibilidade quando a correção de um \textit{bug} for feita, deve ser criada uma nova versão \texttt{MINOR}. Esses e outros detalhes estão especificados na documentação.
+
+
+Rótulos adicionais para pré-lançamento(pre-release) e metadados de construção(build) estão disponíveis como extensão ao formato \texttt{MAJOR.MINOR.PATCH}.
+
+\subsection{Criando \textit{tags} com o \textit{git}}
+
+Para criar uma \textit{tag} usando o \textit{git} basta usar o comando $$\verb|git tag X.Y.Z|$$ onde as letras \texttt{X}, \texttt{Y} e \texttt{Z} devem ser substituídas pelo número da versão seguindo as regras do versionamento semântico visto na seção \ref{semver}.
+
+A seguir estão descritos outros comandos relacionados com as tags:
+
+\begin{itemize}
+	\item \verb|git tag -l|, exibe as tags criadas;
+	\item \verb|git tag|, outra maneira de exibir as tags criadas;
+	\item \verb|git push --tags|, sobe as tags criadas para o repositório remoto.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\nocite{envelhecimento}
 %\nocite{alice}
 %\nocite{camarano}
