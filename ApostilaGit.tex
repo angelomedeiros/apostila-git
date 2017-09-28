@@ -12,109 +12,53 @@
 \usepackage{longtable}
 \usepackage{float}
 
-
-%Options: Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup
-%\usepackage[Bjornstrup]{fncychap}
-% \chapterstyle{pedersen} 
-% \chapterstyle{lyhne} 
-%\chapterstyle{madsen}
-%\chapterstyle{veelo}
 \chapterstyle{lyhne}
 
-\addto\captionsbrazil{%
-	%\renewcommand{\figurename}{Gráfico}%
-	\renewcommand{\tablename}{Tabela}%
+\addto\captionsbrazil{
+	\renewcommand{\tablename}{Tabela}
 	\renewcommand{\listtablename}{Lista de Tabelas}
 }
-%\usepackage{trivfloat}
-%\trivfloat{quadro}
-%\trivfloat{Gráfico}  
-%  
-%
-%\renewcommand{\figurename}{grafico}
-%
-%\renewcommand{\tablename}{Quadro} 
-%\usepackage{fancyvrb}  
-%\newenvironment{codeverbatim}{
-%	\VerbatimEnvironment \small
-%	\begin{Verbatim}[xleftmargin=20mm]}
-%	{\end{Verbatim}}
-%
-%\floatstyle{plain}  %%% tipos: plain, boxed, ruled
-%%\newfloat{quadro}{tbp}{lop}
-%\newfloat{quadro}{tbp}{lop}[chapter]  %%% numera os captions com número de seção.
-%\floatname{quadro}{Quadro}
-%
-%\floatstyle{plain} 
-%\newfloat{grafico}{tbp}{lop}[chapter]
-%\floatname{grafico}{Gráfico}
+
 \usepackage{lipsum}
 \usepackage{multirow}
 \usepackage{longtable}
 
-\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
-\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
-
-%\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
-%\renewcommand{\backref}{}
-%\renewcommand*{\backrefalt}[4]{
-%	\ifcase #1 
-%	Nenhuma citação no texto.
-%	\or
-%	Citado na página #2.
-%	\else
-%	Citado #1 vezes nas páginas #2.
-%	\fi}
+\usepackage[brazilian,hyperpageref]{backref}
+\usepackage[alf]{abntex2cite}
 
 \titulo{Git, uma abordagem \\ pragmática}
 \autor{Angelo Medeiros Nóbrega}
 \local{João Pessoa - PB}
-\data{2017 - V1.0.0}			 %Alterar para 2017?
-%\orientador[Orientadora:]{Prof. Dra. Rossana Maria Souto Maior Serrano}
-%\coorientador{Equipe \abnTeX}
-%\instituicao{%
-%	Centro Universitário de João Pessoa - Unipê
-%	\par
-%	Centro de Ciências da Saúde 
-%	\par
-%	Departamento de Ciências Farmacêuticas
-%	}
+\data{2017 - V1.0.0}
 \tipotrabalho{Trabalho de Conclusão de Curso}
 
 \preambulo{Introdução ao controle de versão e boas práticas com o Git e o Git-flow, usando como repositório remoto o Gitlab.}
 
-%\definecolor{blue}{RGB}{41,5,195}
 
 \makeatletter
 \hypersetup{
-	%pagebackref=true,
 	pdftitle={\@title}, 
 	pdfauthor={\@author},
 	pdfsubject={\imprimirpreambulo},
 	pdfcreator={LaTeX with abnTeX2},
 	pdfkeywords={abnt}{latex}{abntex}{abntex2}{Trabalho de Conclusão do curso}, 
-	colorlinks=true,       		% false: boxed links; true: colored links
-	linkcolor=blue,          	% color of internal links
-	citecolor=blue,        		% color of links to bibliography
-	filecolor=magenta,      		% color of file links
+	colorlinks=true,       	
+	linkcolor=blue,          
+	citecolor=blue,        	
+	filecolor=magenta,      	
 	urlcolor=blue,
 	bookmarksdepth=4
 }
 \makeatother
 
-% O tamanho do parágrafo é dado por:
 \setlength{\parindent}{1.3cm}
-
-% Controle do espaçamento entre um parágrafo e outro:
-\setlength{\parskip}{0.2cm}  % tente também \onelineskip
-
+\setlength{\parskip}{0.2cm}
 \makeindex
-%\bibliographystyle{abnt-num}
 
 
 \begin{document}
 	\selectlanguage{brazil}
-	\frenchspacing 		% Retira espaço extra obsoleto entre as frases.
+	\frenchspacing 	
 	
 	\imprimircapa
 	\imprimirfolhaderosto*
@@ -123,60 +67,7 @@
 	\pdfbookmark[0]{\listfigurename}{lof}
 	\listoffigures*
 	\cleardoublepage
-	% ---
 	
-	% ---
-	% inserir lista de tabelas
-	% ---
-%	\pdfbookmark[0]{\listtablename}{lot}
-%	\listoftables*
-%	\cleardoublepage
-	% ---
-	
-	% ---
-	% inserir lista de abreviaturas e siglas
-	% ---
-%	\begin{siglas}
-%			\item[CV]	Controle de versão
-%	\end{siglas}
-%	% inserir lista de ilustrações
-%	% ---
-%	\pdfbookmark[0]{\listfigurename}{lof}
-%	\listoffigures*
-%	\cleardoublepage
-%	% ---
-%	
-%	% ---
-%	% inserir lista de tabelas
-%	% ---
-%	\pdfbookmark[0]{\listtablename}{lot}
-%	\listoftables*
-%	\cleardoublepage
-%	% ---
-%	
-%	% ---
-%	% inserir lista de abreviaturas e siglas
-%	% ---
-%	\begin{siglas}
-%		\item[ABNT] Associação Brasileira de Normas Técnicas
-%		\item[abnTeX] ABsurdas Normas para TeX
-%	\end{siglas}
-%	% ---
-%	
-%	% ---
-%	% inserir lista de símbolos
-%	% ---
-%	\begin{simbolos}
-%		\item[$ \Gamma $] Letra grega Gama
-%		\item[$ \Lambda $] Lambda
-%		\item[$ \zeta $] Letra grega minúscula zeta
-%		\item[$ \in $] Pertence
-%	\end{simbolos}
-	% ---
-	
-	% ---
-	% inserir o sumario
-	% ---
 	\pdfbookmark[0]{\contentsname}{toc}
 	\tableofcontents*
 	\cleardoublepage
@@ -186,15 +77,14 @@
 % ----------------------------------------------------------
 \textual
 	
-	\chapter[Antes de tudo, o que é controle de versão?]{Antes de tudo, o que é controle de versão?} %$1^{\circ}$[sadsad]{Altera o nome do capitulo}
-	%\addcontentsline{toc}{chapter}{Antes de tudo, o que é controle de versão?} %Altera o nome no sumário
+	\chapter[Antes de tudo, o que é controle de versão?]{Antes de tudo, o que é controle de versão?}
 Antes de começar a utilizar o \textit{git} para versionar seus trabalhos (códigos, imagens, layouts...) você deve entender o que é controle de versão. Após entender esse conceito você estará apto a usar todo o poder que o \textit{git} proporciona. 
 
 O controle de versão(CV) é um sistema usado para ter controle sobre todas(isso se for usada corretamente) as mudanças feitas em um determinado arquivo. O CV permite você reverter sua aplicação que se encontra em um estado que está apresentando um \textit{bug}, para um estado anterior onde o \textit{bug} não havia se manifestado. Permite você também descobrir quem introduziu um problema, quando foi introduzido e onde foi introduzido. Se estiver usando um repositório remoto, você não correrá o risco de perder seu arquivos e melhor ainda, você também não perderá o controle sobre as mudanças feitas localmente. 
 
-O controle de versão ajudará na organização, facilitará na hora de trabalhar em equipe, sem aquela história de dois desenvolvedores alterarem um mesmo arquivo, ao mesmo tempo, por estarem desenvolvendo um mesmo projeto. Segurança, vocês desenvolverão, todos os projetos, sem medo de perder código ou acabar errando alguma atualização, sem ter como voltar. E você verá que existem muitas outras razões para usar um sistema para controle de versão.
+O controle de versão ajudará na organização, facilitará na hora de trabalhar em equipe, sem aquela história de dois desenvolvedores alterarem o mesmo arquivo ao mesmo tempo por estarem desenvolvendo um mesmo projeto. Segurança, vocês desenvolverão todos os projetos sem medo de perder algum código ou acabar errando alguma atualização sem ter como voltar. Você verá que existem muitas outras razões para usar um sistema para controle de versão.
 
-Muitas vezes o controle de versão é confundido com backup, lembre-se que no controle de versão você terá acesso ao arquivo atual e todas alterações ligadas ao arquivo, e no backup você terá acesso apenas a última versão do arquivo.
+Muitas vezes o controle de versão é confundido com backup, lembre-se que no controle de versão você terá acesso ao arquivo atual e todas alterações ligadas ao arquivo e, no backup você terá acesso apenas a última versão do arquivo.
 
 Lembre-se também que todas essas \textit{features} que o controle de versão oferece só existirão se forem usadas corretamente.
 
@@ -210,7 +100,7 @@ O Git é a ferramenta que você utilizará para fazer todo o controle de versão
 	\item Capaz de lidar com projetos grandes como o núcleo o Linux com eficiência (velocidade e tamanho dos dados).	
 \end{enumerate}
 
-Desde 2005 quando o Git foi criado, ele passou por um longo período de evolução e ainda continua. Hoje ele está em uma versão estável oferecendo todas as \textit{features} citadas acima.
+Desde 2005 quando o Git foi criado ele passou por um longo período de evolução e ainda continua. Hoje ele está em uma versão estável oferecendo todas as \textit{features} citadas acima.
 
 \section{O GitLab \label{gitlab}}
 
@@ -232,15 +122,15 @@ O \textit{git-flow}  é uma extensão do \textit{git} para auxiliar o controle d
 Você pode aplicar a metodologia do \textit{git-flow}  sem a necessidade de ter ele instalado, usando apenas comandos nativos do \textit{git}. 
 
 \chapter{A estratégia de ramificação \label{ramificacao}}
-A estratégia de ramificação assemelha-se muito a estruta de uma árvore, por isso alguns comandos do \textit{git} usam opções como \textit{branch}(que significa ramo ou galho), ferramentas como o \textit{SourceTree} que serve para visualizar toda a ramificação do projeto em forma de grafos (a título de informação, \textit{tree} significa árvore).
+A estratégia de ramificação assemelha-se muito a estruta de uma árvore, por isso alguns comandos do \textit{git} usam termos como \textit{branch}(que significa ramo ou galho), ferramentas como o \textit{SourceTree} que serve para visualizar toda a ramificação do projeto em forma de grafos (a título de informação, \textit{tree} significa árvore).
 
-A estratégia que está representada na figura \ref{estrategia}, já é algo que grandes e pequenas empresas usam a bastante tempo. Explicarei como ela é construída, como iremos trabalhar em cima dessa estratégia usando o \textit{git}, e como usar a poderosa extensão do \textit{git}, o \textit{\textit{git-flow}}, para facilitar ainda mais nosso trabalho. 
+A estratégia que está representada na figura \ref{estrategia}, é uma estratégia que grandes e pequenas empresas usam a bastante tempo. Explicarei como ela é construída e como iremos trabalhar em cima dessa estratégia usando o \textit{git}, e como usar a poderosa extensão do \textit{git}, o \textit{\textit{git-flow}}, para facilitar ainda mais nosso trabalho. 
 
 
  \begin{figure}[h]
  	\caption{\label{estrategia}Estratégia de ramificação}
  	\begin{center}
- 		\includegraphics[width=0.85\linewidth]{estrategia}
+ 		\includegraphics[width=0.85\linewidth]{imagens/estrategia}
  	\end{center}
  	\legend{Fonte: (http://nvie.com/posts/a-successful-git-branching-model/)}
  \end{figure}
@@ -250,79 +140,77 @@ A estratégia que está representada na figura \ref{estrategia}, já é algo que
 
 Na estratégia que iremos adotar vamos trabalhar com seis tipos de ramos, são eles, dois ramos principais e quatro tipos de ramos de apoio. 
 
-Os ramos principais são os ramos \textit{master} e o \textit{develop}. E os ramos de apoio serão os ramos, \textit{feature}, \textit{release}, \textit{hotfix} e \textit{buxfix}. A seguir irei descrever cada um desses ramos. 
-
-%Os ramos principais têm vida infinita, ou seja, eles sempre estarão presentes dentro do desenvolvimento, em contrapartida, os branches de apoio têm vida curta, sendo excluidos após suas utlizações, essas questões ficarão mais claras na prática.
+Os ramos principais são os ramos \textit{master} e o \textit{develop}. Os ramos de apoio serão os branches \textit{feature}, \textit{release}, \textit{hotfix} e \textit{buxfix}. A seguir irei descrever cada um desses ramos. 
 
 \subsection{O \textit{branch} \textit{master}}
 
-O ramo \textit{master} é o ramo que irá abrigar os códigos em suas versões mais estáveis, esse é o branch de produção. É o ramo que dará origem a aplicação final. Em algum momento do desenvolvimento todos os códigos produzidos em outros ramos farão um \textit{merge}(ato de mesclar os ramos, colocar os arquivos de um \textit{branch} em outro) com o \textit{branch master}, de forma direta ou indireta.
+O branch \textit{master} é o ramo que irá abrigar os códigos em suas versões mais estáveis, ele será o branch de produção. É o ramo que dará origem a aplicação final. Em algum momento do desenvolvimento todos os códigos produzidos em outros ramos farão um \textit{merge}(ato de mesclar os ramos, colocar os arquivos de um \textit{branch} em outro) com o \textit{branch master}, de forma direta ou indireta.
 
 \subsection{O \textit{branch develop}}
 
-Este ramo será responsável por conter os códigos em nível de desenvolvimento para o próximo \textit{deploy}(significa implementar, mas pode mudar de significado de acordo com o contexto). Lembre-se que os códigos não serão criados nesse \textit{branch}, esse é responsável apenas em abrigar os códigos que estão em desenvolvimento. Após os códigos serem devidamente testados, o \textit{branch develop} fará um merge com o \textit{branch master}, isso se nem um \textit{bug} for encontrado no processo de testes, esse processo está representado na figura \ref{develop}. Se o código aprensentar \textit{bug} será criado outro branch a partir do \textit{branch develop} para a correção dos \textit{bugs} e posteriormente mesclado com o \textit{branch master}.
+Este ramo será responsável por conter os códigos em nível de desenvolvimento para o próximo \textit{deploy}(significa implementar, mas pode mudar de significado de acordo com o contexto). Lembre-se que os códigos não serão criados nesse \textit{branch}, ele é responsável apenas em abrigar os códigos que estão em desenvolvimento. Após os códigos serem devidamente testados o \textit{branch develop} fará um merge com o \textit{branch master}, isso se nem um \textit{bug} for encontrado no processo de testes, esse processo está representado na figura \ref{develop}. Se o código aprensentar \textit{bug}, será criado outro branch a partir do \textit{branch develop} para a correção dos \textit{bugs} e posteriormente mesclado com o \textit{branch master}.
 
 \begin{figure}[h]
 	\caption{\label{develop}O \textit{branch} \textit{develop}}
 	\begin{center}
-		\includegraphics[width=0.6\linewidth]{develop}
+		\includegraphics[width=0.6\linewidth]{imagens/develop}
 	\end{center}
 	\legend{Fonte: (http://nvie.com/posts/a-successful-git-branching-model/)}
 \end{figure}
 	
-Os branches \textit{master} e \textit{develop}, possuem vida infinita, ou seja, eles sempre estarão presentes durante o desenvolvimento, e serão criados sempre que o git for inicializado. Os branches a seguir terão vida curta, eles serão criados e após suas utlizações eles serão finalizados e excluídos, esse processo firará mais claro na prática.
+Os branches \textit{master} e \textit{develop} possuem ``vida infinita'', ou seja, eles sempre estarão presentes durante o desenvolvimento, e sempre serão criados quando o repositório for inicializado(isso se você estiver usando o git-flow, por padrão o git cria apenas o master). Os branches a seguir terão vida curta, eles serão criados durante a evolução do projeto e, após suas utlizações eles serão finalizados e excluídos, esse processo firará mais claro na prática.
 
 \subsection{O \textit{branch} \textit{feature}}
 
-O branch feature representado na figura \ref{feature}, será utlizado sempre que uma nova funcionalidade precisar ser criada. Ele sempre será criado a partir do\textit{ branch develop} e finalizado no \textit{branch develop}, independente em qual ramo você esteja, isso se você estiver utlizando o \textit{git-flow}.
+O branch feature representado na figura \ref{feature} será utlizado sempre que uma nova funcionalidade precisar ser criada. Ele sempre será criado a partir do\textit{ branch develop} e finalizado no \textit{branch develop} independente em qual ramo você esteja(isso se você estiver utlizando o \textit{git-flow}).
 
-Ao contrário do ramo \textit{master} e \textit{develop}, o ramo \textit{feature} pode ser criado múltiplas vezes, uma para cada nova funcionalidade. Esse branch possui como prefixo \textit{feature/*}, onde o asterisco(*) será substituido pelo nome do "sub-ramo" \ digamos assim, por exemplo, \textit{feature/cadastrodeclientes}, \textit{feature/teladelogin}.
+Ao contrário do ramo \textit{master} e \textit{develop}, o ramo \textit{feature} pode ser criado múltiplas vezes, uma para cada nova funcionalidade. Esse branch possui como prefixo \textit{feature/*}, onde o asterisco(*) será substituido pelo nome do ``sub-ramo'' digamos assim, por exemplo, \textit{feature/cadastrodeclientes}, \textit{feature/teladelogin}.
 
 \begin{figure}[h]
 	\caption{\label{feature}O \textit{branch} \textit{feature}}
 	\begin{center}
-		\includegraphics[width=0.26\linewidth]{feature}
+		\includegraphics[width=0.26\linewidth]{imagens/feature}
 	\end{center}
 	\legend{Fonte: (http://nvie.com/posts/a-successful-git-branching-model/)}
 \end{figure}
 
 
-São duas as principais maneiras de mesclar branches, figura \ref{feature-merges}. A primeira é fazendo a mesclagem criando um novo \textit{commit} com as alterações dentro do ramo \textit{develop}, sem adicionar os \textit{commits} criados durante o desenvolvimento do ramo feature e, a outra é adicionando os \textit{commits} criados no ramo \textit{feature} dentro do ramo \textit{develop} e, mais um novo \textit{commit} indicando a mesclagem, o git-flow usa como padrão esse último. Novamente, esse proceso ficará mais claro durante a prática.
+São duas as principais maneiras de mesclar branches, figura \ref{feature-merges}. A primeira é fazendo a mesclagem criando um novo \textit{commit} com as alterações dentro do ramo \textit{develop} sem adicionar os \textit{commits} criados durante o desenvolvimento do ramo feature e, a outra é adicionando os \textit{commits} criados no ramo \textit{feature} dentro do ramo \textit{develop} e mais um novo \textit{commit} indicando a mesclagem, o git-flow usa como padrão esse último. Novamente, esse proceso ficará mais claro durante a prática.
 
 
 \begin{figure}[h]
 	\caption{\label{feature-merges}Tipos de merges}
 	\begin{center}
-		\includegraphics[width=0.8\linewidth]{feature-merges}
+		\includegraphics[width=0.8\linewidth]{imagens/feature-merges}
 	\end{center}
 	\legend{Fonte: (http://nvie.com/posts/a-successful-git-branching-model/)}
 \end{figure}
 
 \subsection{O \textit{branch release}}
 
-Esse branch é o ramo intermediário entre o \textit{develop} e o \textit{master}. O objetivo desse branch é a criação de tags(são os números que indicam a versão da aplicação, 1.0.0, por exemplo). Ele inicia no \textit{branch develop} e termina no \textit{branch master} e no \textit{develop}. Você deve está se perguntando porquê um \textit{branch} que inicia-se no \textit{develop} tem que terminar no \textit{develop}. Isso acontece porquê o \textit{branch} \textit{develop} tem que ter a mesma \textit{tag} do \textit{branch master}.
+Esse branch é o ramo intermediário entre o \textit{develop} e o \textit{master}. O objetivo desse branch é a criação de tags(são os números que indicam a versão da aplicação, 1.0.0 por exemplo). Ele inicia no \textit{branch develop} e termina no \textit{branch master} e no \textit{develop}. Você deve está se perguntando porquê um \textit{branch} que inicia-se no \textit{develop} tem que terminar no \textit{develop}. Isso acontece porquê o \textit{branch} \textit{develop} tem que ter a mesma \textit{tag} do \textit{branch master}.
 
-O prefixo usado pelo \textit{branch release} é \textit{release/*}\ , onde o asterisco(*) deve ser substituido pela tag da \textit{realese}, por exemplo, \textit{release/0.1.0}. Mais na frente iremos aprender um conjunto de regras para a criação dessas tags, conhecido como versionamento semântico.
+O prefixo usado pelo \textit{branch release} é \textit{release/*} onde o asterisco(*) deve ser substituido pela tag da \textit{realese}, por exemplo, \textit{release/0.1.0}. Mais na frente iremos aprender um conjunto de regras para a criação dessas tags, conhecido como versionamento semântico.
 
-Sempre quando falo que um branch "termina"\ ou "finaliza", \ me refiro a mesclagem de um branch em outro, usado por padrão pelo git-flow.
+Sempre quando falo que um branch ``termina'' ou ``finaliza'', me refiro a mesclagem de um branch em outro usado por padrão pelo git-flow.
 
 \subsection{Os \textit{branches hotfixes} e \textit{bugfixes}}
 
-O \textit{branch hotfix} e \textit{bugfix}, tem o objetivo de correção de erros. A diferença entre eles é onde cada um é inicializado. 
+O \textit{branch hotfix} e \textit{bugfix} tem o objetivo de correção de erros. A diferença entre eles é onde cada um é inicializado. 
 
-Se o \textit{bug} for encotrado no ramo de produção(\textit{branch master}), um \textit{branch hotfix}, ver figura \ref{hotfix}, deve ser criado para tratar o erro a partir do ramo \textit{master}. Após a correção do erro, uma nova \textit{tag} será criada automaticamente e, o \textit{branch hotfix} será mesclado com o ramo \textit{master} e também ao ramo \textit{develop} para que esse não apresente o erro em futuras versões.
+Se o \textit{bug} for encotrado no ramo de produção(\textit{branch master}), um \textit{branch hotfix}, ver figura \ref{hotfix}, deve ser criado para tratar o erro a partir do ramo \textit{master}. Após a correção do erro uma nova \textit{tag} será criada automaticamente e, o \textit{branch hotfix} será mesclado com o ramo \textit{master} e também ao ramo \textit{develop} para que esse não apresente o erro em futuras versões.
 
-Análogo ao \textit{branch release}, o prefixo do \textit{branch hotfix} é \textit{hotfix/*}\ , onde o asterisco(*) deve ser substituido pela nova tag, por exemplo, \textit{hotfix/0.1.1}.
+Análogo ao \textit{branch release} o prefixo do \textit{branch hotfix} é \textit{hotfix/*}, onde o asterisco(*) deve ser substituido pela nova tag, por exemplo, \textit{hotfix/0.1.1}.
 
 \begin{figure}[h]
 	\caption{\label{hotfix}O \textit{branch hotfix}}
 	\begin{center}
-		\includegraphics[width=0.6\linewidth]{hotfix}
+		\includegraphics[width=0.6\linewidth]{imagens/hotfix}
 	\end{center}
 	\legend{Fonte: (http://nvie.com/posts/a-successful-git-branching-model/)}
 \end{figure}
 
-Já o \textit{branch bugfix}, ele deve ser criado quando um \textit{bug} é encontrado durante o desenvolvimento. Ele é iniciado e finalizado no \textit{branch develop}. Seu prefixo é semelhante ao do \textit{branch feature}, por exemplo, \textit{bugfix/erro-cadastramento}.
+O \textit{branch bugfix} deve ser criado quando um \textit{bug} é encontrado durante o desenvolvimento. Ele é iniciado e finalizado no \textit{branch develop}. Seu prefixo é semelhante ao do \textit{branch feature}, por exemplo, \textit{bugfix/erro-cadastramento}.
 
 \chapter{Primeiros passos com o Git}
 
@@ -330,34 +218,34 @@ Nessa etapa vamos supor que todos estejam com o Git e o Git-flow instalados, cas
 
 \section{Configuração inicial \label{configinicial}}
 
-O primeiro passo é abrir seu console preferido, se estiverem no Linux ou macOS, abram o terminal. Se estiverem utilizando o Windows, podem utilizar o Git Bash, que é instaldo com o Git. Ainda para usuários Windows, uma dica que eu dou é usar o Cmder, é um console free e muito mais agradável de se trabalhar, e não prescisa ser instaldo, apenas ser baixado, ver figura \ref{cmder}. Sugiro também não utilizar o MS-DOS, nem o PowerShell.
+O primeiro passo é abrir seu console preferido, se estiverem no Linux ou macOS, abram o terminal por exemplo. Se estiverem utilizando o Windows vocês podem usar o Git Bash que é instaldo com o Git. Ainda para usuários Windows, uma dica que dou é usar o Cmder, é um console free e muito mais agradável de se trabalhar e não prescisa ser instaldo, apenas baixado, ver figura \ref{cmder}. Sugiro também não utilizar o MS-DOS, nem o PowerShell.
 
 \begin{figure}[h]
 	\caption{\label{cmder}Uma alternativa para o MS-DOS, o \textit{Cmder}}
 	\begin{center}
-		\includegraphics[width=1\linewidth]{cmder}
+		\includegraphics[width=1\linewidth]{imagens/cmder}
 	\end{center}
 	\legend{Fonte: (http://cmder.net/)}
 \end{figure}
 
-Com o seu console aberto digite \textit{git}, e aperte enter, isso irá verificar se o git foi instaldo corretamente. Se ele tiver sido instalado corretamente, irá aparecer algo semelhante a figura \ref{terminal}.
+Com o seu console aberto digite \textit{git} e aperte enter, isso irá verificar se o git foi instaldo corretamente. Se ele tiver sido instalado corretamente irá aparecer algo semelhante a figura \ref{terminal}.
 
 \begin{figure}[h]
 	\caption{\label{terminal}Verificando a instalação do git}
 	\begin{center}
-		\includegraphics[width=1\linewidth]{terminal}
+		\includegraphics[width=1\linewidth]{imagens/terminal}
 	\end{center}
 	\legend{Fonte: (Do autor)}
 \end{figure}
 
-Com o git devidamente instalado, vamos começar a configuração. Para isso insira os seguintes comandos, o primeiro será para o git identificar seu nome, e o segundo seu email(figura \ref{configuracao}):
+Com o git devidamente instalado vamos começar a configuração. Para isso insira os seguintes comandos, o primeiro será para o git identificar seu nome, e o segundo seu email(figura \ref{configuracao}):
 
 	\begin{verbatim}
 		          git config --global user.name "Angelo Medeiros"
 		          git config --global user.email "angelo@email.com"
 	\end{verbatim}
 
-Caso queira visualizar suas configuração globais, digite o comando:
+Caso queira visualizar suas configuração globais digite o comando:
 
 \begin{verbatim}
 		          git config --global --list
@@ -372,18 +260,18 @@ O próximo comando serve para facilitar o entendimento visual:
 \begin{figure}[h]
 	\caption{\label{configuracao}Configuração inicial do git}
 	\begin{center}
-		\includegraphics[width=1\linewidth]{configuracao}
+		\includegraphics[width=1\linewidth]{imagens/configuracao}
 	\end{center}
 	\legend{Fonte: (Do autor)}
 \end{figure}
 
 \chapter{Os 3 estágios}
 
-Nesse capítulo ensinarei a criar seu primeiro repositório git. E quais são os três principais estágios do processo para o versionamento usado pelo git.
+Nesse capítulo ensinarei a criar seu primeiro repositório git e, quais são os três principais estágios do processo para o versionamento usado pelo git.
 
 \section{Criando um repositório}
 
-O primeiro passo é acessar a pasta que você quer iniciar o repositório git. Para exemplificar eu criei uma pasta chamada gitLegal, e usei os seguintes comandos(ver figura \ref{repositorio}):
+O primeiro passo é acessar a pasta pelo terminal que você quer iniciar o repositório git. Para exemplificar eu criei uma pasta chamada gitLegal e usei os seguintes comandos(ver figura \ref{repositorio}):
 
 \begin{verbatim}
 		        Criando a pasta gitLegal: mkdir gitLegal
@@ -397,7 +285,7 @@ O primeiro passo é acessar a pasta que você quer iniciar o repositório git. P
 \begin{figure}[h]
 	\caption{\label{repositorio}Criando repositório git}
 	\begin{center}
-		\includegraphics[width=1\linewidth]{repositorio}
+		\includegraphics[width=1\linewidth]{imagens/repositorio}
 	\end{center}
 	\legend{Fonte: (Do autor)}
 \end{figure}
@@ -406,18 +294,18 @@ O processo de verificação da pasta foi feito apenas para mostrar que quando o 
 
 \section{O primeiro estágio}
 
-O primeiro estágio é chamado de "untracked files". Assim que você faz alguma aleteração no repositório, cria uma pasta ou arquivo, ou altera um arquivo, isso faz com que o elemento que você alterou entre no primeiro estágio.
+O primeiro estágio é chamado de "untracked files". Assim que você faz alguma aleteração no repositório, criando uma pasta ou arquivo, ou alterando um arquivo existente, isso faz com que o elemento que você alterou entre no primeiro estágio.
 
-Para verificar em que estágio seus elementos estão, basta digitar o comando \textit{git status}.
+Para verificar em que estágio seus elementos estão basta digitar o comando \textit{git status}.
 
-Se for dado um \textit{git status} na pasta gitLegal, não irá aparecer nada, pois o repositório não teve nemnhuma alteração. 
+Se for dado um \textit{git status} na pasta gitLegal não irá aparecer nada, pois, o repositório não teve nenhuma alteração. 
 
-Para demonstrar o primeiro estágio irei criar um arquivo em branco chamado \textit{helloWorld} e, em seguida, executarei o comando para verificar o estágio(ver figura \ref{estagio1}).
+Para demonstrar o primeiro estágio irei criar um arquivo em branco chamado \textit{helloWorld} e em seguida executarei o comando para verificar o estágio(ver figura \ref{estagio1}).
 
 \begin{figure}[h]
 	\caption{\label{estagio1}O primeiro estágio}
 	\begin{center}
-		\includegraphics[width=1\linewidth]{estagio1}
+		\includegraphics[width=1\linewidth]{imagens/estagio1}
 	\end{center}
 	\legend{Fonte: (Do autor)}
 \end{figure}
@@ -426,12 +314,12 @@ O comando \textit{touch} foi usado para a criação do arquivo \textit{helloWorl
 
 \section{O segundo estágio}
 
-O segundo estágio é chamado de "Changes to be committed". Nessa etapa você irá adicionar os elementos do primeiro estágio para serem "commitados" \ no terceiro estágio. Irei criar outro arquivo em branco, chamado helloWorld2, apenas para ficar mais claro a importância dessa etapa(ver figura \ref{estagio2}).
+O segundo estágio é chamado de ``Changes to be committed''. Nessa etapa você irá adicionar os elementos do primeiro estágio para serem ``commitados''  no terceiro estágio. Irei criar outro arquivo em branco chamado helloWorld2, apenas para ficar mais claro a importância dessa etapa(ver figura \ref{estagio2}).
 
 \begin{figure}[h]
 	\caption{\label{estagio2}O segundo estágio}
 	\begin{center}
-		\includegraphics[width=1\linewidth]{estagio2}
+		\includegraphics[width=1\linewidth]{imagens/estagio2}
 	\end{center}
 	\legend{Fonte: (Do autor)}
 \end{figure}
@@ -440,16 +328,16 @@ Agora vamos entender o que foi feito. Com a adição do arquivo helloWorld2, o p
 
 Como mostra a figura \ref{estagio2}, no segundo estágio encontra-se apenas o primeiro \textit{helloWorld}. Peço desculpas pela falta de criatividade ao nomear os elementos.
 
-Na maioria das vezes é necessário adicionar mais de uma arquivo ao terceiro estágio e não é viável adicionar um por um. Uma alternativa mais eficiente para essa situação é usar o comando "\textbf{git add .}", ele irá adicionar todos os arquivos ao terceiro estágio. Preste atenção no ponto seguido do add, ele também faz parte do comando.
+Na maioria das vezes é necessário adicionar mais de uma arquivo ao terceiro estágio e não é viável adicionar um por um. Uma alternativa mais eficiente para essa situação é usar o comando ``\textbf{git add .}'', ele irá adicionar todos os arquivos ao terceiro estágio. Preste atenção no ponto seguido do add, ele também faz parte do comando.
 
 \section{O terceiro estágio}
 
-Nesse estágio é onde acontece o famoso \textit{commit}. Para quem não sabe o que é um \textit{commit}, ele nada mais é que um \textit{snapshot} do estado de sua aplicação. Na figura \ref{estagio3} mostra o arquivo \textit{helloWorld} sendo "commitado". Observe que após o \textit{commit}, o arquivo \textit{helloWorld} não aparece mais quando é usado o comando \textit{git status}. O arquivo só voltará a aparecer quando sofrer alguma alteração novamente. 
+Nesse estágio é onde acontece o famoso \textit{commit}. Para quem não sabe o que é um \textit{commit}, ele nada mais é que um \textit{snapshot} do estado de sua aplicação. Na figura \ref{estagio3} mostra o arquivo \textit{helloWorld} sendo ``commitado''. Observe que após o \textit{commit} o arquivo \textit{helloWorld} não aparece mais quando é usado o comando \textit{git status}. O arquivo só voltará a aparecer quando sofrer alguma alteração novamente. 
 
 \begin{figure}[h]
 	\caption{\label{estagio3}O terceiro estágio}
 	\begin{center}
-		\includegraphics[width=1\linewidth]{estagio3}
+		\includegraphics[width=1\linewidth]{imagens/estagio3}
 	\end{center}
 	\legend{Fonte: (Do autor)}
 \end{figure}
@@ -459,30 +347,30 @@ Existem duas principais maneiras de realizar um \textit{commit}, na figura \ref{
 \begin{figure}[h]
 	\caption{\label{commit}Outra maneira de realizar um commit}
 	\begin{center}
-		\includegraphics[width=1\linewidth]{commit2}
+		\includegraphics[width=1\linewidth]{imagens/commit2}
 	\end{center}
 	\legend{Fonte: (Do autor)}
 \end{figure}
 
-A primeira maneira deve ser usada quando você fez poucas alterações, e você consegue descrever todas esses mudanças em apenas uma linha usado o commando \textit{git commit -m "comentario"}. A segunda maneira deve ser usada quando for preciso descrever diversas alterações e apenas uma linha não basta. Uma dica é, evite usar acentuação dentro dos comentários, quando a acentuação é usada, algumas vezes quando você for visualizar os commits, a acentuação poderá não ser reconhecida pelo console.
+A primeira maneira deve ser usada quando você fez poucas alterações, e você consegue descrever todas esses mudanças em apenas uma linha usado o commando \textit{git commit -m "comentario"}. A segunda maneira deve ser usada quando for preciso descrever diversas alterações e apenas uma linha não basta. Uma dica é, evite usar acentuação dentro dos comentários, quando a acentuação é usada, algumas vezes quando você for visualizar os commits a acentuação poderá não ser reconhecida pelo console.
 
 \chapter{Comandos mais usados no git}
 
-Nesse capítulo irei apresentar os principais comandos usados pelo git, e sempre estarei dando algumas dicas.
+Nesse capítulo irei apresentar os principais comandos usados pelo git e sempre estarei dando algumas dicas.
 
 \section{Visualizando o log}
 
-Até agora vocês aprenderam a visualizar em que estágio está sua aplicação, e a criar os \textit{commits}. Agora ensinarei como visualizar os \textit{commits} criados, o \textit{log}. O comando básico para visualizar um \textit{log} é o \textit{git log}(ver figura \ref{gitlog}), mas ele também pode vim com outras opções, ensinarei os mais usados.
+Até agora vocês aprenderam a visualizar em que estágio está sua aplicação e a criar os \textit{commits}. Agora ensinarei como visualizar os \textit{commits} criados, o \textit{log}. O comando básico para visualizar um \textit{log} é o \textit{git log}(ver figura \ref{gitlog}) mas ele também pode vim com outras opções, ensinarei os mais usados.
 
 \begin{figure}[h]
 	\caption{\label{gitlog}Visualizando o log básico}
 	\begin{center}
-		\includegraphics[width=1\linewidth]{gitlog}
+		\includegraphics[width=1\linewidth]{imagens/gitlog}
 	\end{center}
 	\legend{Fonte: (Do autor)}
 \end{figure}
 
-Irei adicionar dentro do arquivo helloWorld, o texto a seguir e fazer um novo commit. 
+Irei adicionar dentro do arquivo helloWorld o texto a seguir e, farei um novo commit. 
 
 \begin{verbatim}
           # Comando para imprimir na tela usando o python 2.x 
@@ -495,7 +383,7 @@ A figura \ref{pretty} mostra a execução do commando \textit{git log --pretty=o
 \begin{figure}[h]
 	\caption{\label{pretty}Outra maneira de visualizar o log}
 	\begin{center}
-		\includegraphics[width=1\linewidth]{pretty}
+		\includegraphics[width=1\linewidth]{imagens/pretty}
 	\end{center}
 	\legend{Fonte: (Do autor)}
 \end{figure}
@@ -522,48 +410,50 @@ Abaixo seguem outros comandos para vocês experimentarem:
 \begin{figure}[H]
 	\caption{\label{logp}Mais uma maneira de visualizar o log}
 	\begin{center}
-		\includegraphics[width=1\linewidth]{logp}
+		\includegraphics[width=1\linewidth]{imagens/logp}
 	\end{center}
 	\legend{Fonte: (Do autor)}
 \end{figure}
 
-Na figura \ref{logp} as linhas que começam com um símbolo de mais(+) indica alg:wo que foi adicionado. Se começar com o símbolo de menos($-$) significa que algo foi retirado. Os números entre os símbolos de (@), indicam as posições das linhas, onde houveram alterações. Quando vocês estiverem praticando, isso ficará mais claro.
+Na figura \ref{logp} as linhas que começam com um símbolo de mais(+) indica algo que foi adicionado. Se começar com o símbolo de menos($-$) significa que algo foi retirado. Os números entre os símbolos de (@) indicam as posições das linhas onde houveram alterações. Quando vocês estiverem praticando isso ficará mais claro.
 
 \section{Criando branches \label{criandobranch}}
 
-Para criar um novo \textit{branch}, usamos o comando \textit{git checkout -b nomeBranch}. Onde \textit{nomeBranch} deve ser substituído pelo nome do \textit{branch} que você quer criar. Vale resaltar que um \textit{branch} é sempre criado baseado no \textit{branch} atual, ou seja, se você estiver no\textit{ branch master}, o novo \textit{branch} será um clone do \textit{branch master}, ver figura \ref{novobranch}.
+Para criar um novo \textit{branch} usamos o comando \textit{git checkout -b nomeBranch}. Onde \textit{nomeBranch} deve ser substituído pelo nome do \textit{branch} que você quer criar. Vale resaltar que um \textit{branch} é sempre criado baseado no \textit{branch} atual, ou seja, se você estiver no\textit{ branch master}, o novo \textit{branch} será um ``clone'' do \textit{branch master}, ver figura \ref{novobranch}.
 
 \begin{figure}[H]
 	\caption{\label{novobranch}Criando um branch}
 	\begin{center}
-		\includegraphics[width=1\linewidth]{novobranch}
+		\includegraphics[width=1\linewidth]{imagens/novobranch}
 	\end{center}
 	\legend{Fonte: (Do autor)}
 \end{figure}
 
-Observe que quando você cria um \textit{branch}, o \textit{git} já inicia dentro do novo \textit{branch}. Irei listar abaixo os principais comandos relacionados a manipulação dos branches.
+Observe que quando você cria um \textit{branch} o \textit{git} já inicia dentro do novo \textit{branch}. Irei listar abaixo os principais comandos relacionados a manipulação dos branches.
 
 \begin{itemize}
 	\item \verb|git checkout nomeDoBranch|, troca do \textit{branch} atual para o \textit{branch nomeDoBranch};
 	\item \verb|git branch|, exibe os branches criados localmente;
 	\item \verb|git branch -a|, exibe os branches locais e os remotos(se você tiver trabalhano com branches remotos);
-	\item \verb|git branch -d nomeDoBranch|, deleta o \textit{branch nomeDoBranch}.
+	\item \verb|git remote -v|, exibe os branches remotos;
+	\item \verb|git branch -d nomeDoBranch|, deleta o \textit{branch nomeDoBranch};	
+	\item \verb|git branch -D nomeDoBranch|, força a exlusão do \textit{branch nomeDoBranch}.
 \end{itemize}
 
 \section{Mesclando branches}
 
-Mesclar branches na maioria das vezes é uma tarefa fácil. Porém algumas vezes ocorrem conflitos, esse assunto será tratado em uma seção mais na frente. Por enquanto, vamos se preocupar apenas em mesclar os \textit{branches}. São duas as principais maneiras de fazer a mesclagem usando o git, você pode usar o \textit{merge} ou o \textit{rebase}.
+Mesclar branches na maioria das vezes é uma tarefa fácil. Porém algumas vezes ocorrem conflitos, esse assunto será tratado em uma seção mais na frente. Por enquanto vamos se preocupar apenas em mesclar os \textit{branches}. São duas as principais maneiras de fazer a mesclagem usando o git, você pode usar o \textit{merge} ou o \textit{rebase}.
 
 \subsection{Mesclando usando o merge}
 
 O comando $$\verb|git merge funcionalidade1|$$ é usado para realizar o merge. Ele irá mesclar o \textit{branch funcionalidade1} com o \textit{branch atual}.
 
-A vantagem do merge é que ele preserva um histórico completo do seu projeto e, evita problemas quando está trabalhando em equipe(ver figura \ref{merge}).
+A vantagem do merge é que ele preserva um histórico completo do seu projeto e, evita problemas quando está trabalhando em um ambiente cooperativo(ver figura \ref{merge}).
 
 \begin{figure}[H]
 	\caption{\label{merge}Mesclando usando o merge}
 	\begin{center}
-		\includegraphics[width=0.5\linewidth]{merge}
+		\includegraphics[width=0.5\linewidth]{imagens/merge}
 	\end{center}
 	\legend{Fonte: (https://stackoverflow.com/questions/16666089)}
 \end{figure}
@@ -575,7 +465,7 @@ O rebase preserva um histórico mais limpo e linear do seu projeto, porém ao tr
 \begin{figure}[H]
 	\caption{\label{rebase}Mesclando usando o rebase}
 	\begin{center}
-		\includegraphics[width=0.5\linewidth]{rebase}
+		\includegraphics[width=0.5\linewidth]{imagens/rebase}
 	\end{center}
 	\legend{Fonte: (https://stackoverflow.com/questions/16666089)}
 \end{figure}
@@ -584,7 +474,7 @@ O rebase é aconselhado apenas quando você está trabalhando localmente, a não
 
 \section{Voltando versões}
 
-Na minha opinião essa é a principal função do git, o processo de voltar versões. Existem diversas maneiras de fazer isso. Algumas são simples, mas não oferecem muita segurança para quem está iniciando nesse novo mundo do controle de versões. Outras envolvem mais etapas, porém você sentirá segurança realizando o processo,  o fato de ter mais etapas não o torna mais difícil.
+Na minha opinião essa é a principal função do git, o processo de voltar versões. Existem diversas maneiras de fazer isso. Algumas são simples, mas não oferecem muita segurança para quem está iniciando nesse novo mundo do controle de versões. Outras envolvem mais etapas, porém você sentirá segurança realizando o processo, o fato de ter mais etapas não o torna mais difícil.
 
 A maioria dos comandos para voltar versões necessitam do \textit{hash} do \textit{commit}, você pode encontrar esse \textit{hash} visualizando o \textit{log}. Não é necessário o hash completo, apenas o começo. A seguir estão os principais comandos:
 
@@ -597,14 +487,14 @@ A maioria dos comandos para voltar versões necessitam do \textit{hash} do \text
 \begin{figure}[h]
 	\caption{\label{voltando}Voltando versão}
 	\begin{center}
-		\includegraphics[width=1\linewidth]{voltando}
+		\includegraphics[width=1\linewidth]{imagens/voltando}
 	\end{center}
 	\legend{Fonte: (Do autor)}
 \end{figure}
 
-Entendo a figura \ref{voltando}. Veja que antes do \textit{reset} existia o arquivo \textit{helloWorld2}. No final do processo além de apagar o arquivo \textit{helloWorld2}, as alterações feitas no arquivo \textit{helloWorld} também foram desfeitas, apesar de não mostrar na figura. Essas mudanças aconteceram porquê o arquivo \textit{heloWorld2} foi criado no \textit{commit} eddcb203a, como pode ser observado nos comentários do \textit{commit} mostrado no \textit{log}, e o conteudo do arquivo \textit{helloWorld} ocorreu no \textit{commit} 2bf2040e30. Por isso a importância de documentar corretamenta os \textit{commits}.
+Entendendo a figura \ref{voltando}. Veja que antes do \textit{reset} existia o arquivo \textit{helloWorld2}. No final do processo além de apagar o arquivo \textit{helloWorld2}, as alterações feitas no arquivo \textit{helloWorld} também foram desfeitas apesar de não mostrar na figura. Essas mudanças aconteceram porquê o arquivo \textit{heloWorld2} foi criado no \textit{commit} eddcb203a como pode ser observado nos comentários do \textit{commit} mostrado no \textit{log} e, o conteudo do arquivo \textit{helloWorld} ocorreu no \textit{commit} 2bf2040e30. Por isso a importância de documentar corretamente os \textit{commits}.
 
-Você pode combinar diversas técnicas para voltar versões usando o git. Quando forem ganhando mais segurança do que estão fazendo, o processo de voltar versões irá se tornar algo natural. Por exemplo, você pode criar um novo \textit{branch} a partir do qual queira voltar uma versão, e depois mesclar esse novo \textit{branch} com o \textit{branch} principal. Depende apenas da sua engenhosidade, então façam diversos experimentos usando o git para adquirir experiência.
+Você pode combinar diversas técnicas para voltar versões usando o git. Quando forem ganhando mais segurança no que estão fazendo, o processo de voltar versões irá se tornar algo natural. Por exemplo, você pode criar um novo \textit{branch} a partir do qual queira voltar uma versão, e depois mesclar esse novo \textit{branch} com o \textit{branch} principal. Depende apenas da sua engenhosidade, então façam diversos testes usando o git para adquirir experiência.
 
 \section{Algumas dicas}
 
@@ -612,26 +502,26 @@ Nas seções seguintes serão descritas algumas dicas.
 
 \subsection{Ignorando arquivos com o Git}
 
-Geralmente tem arquivos que são criados automaticamente durante um projeto, por exemplo arquivos de log. Tais arquivos sempre ficam aparecendo no segundo estágio e isso não é algo interessante. 
+Geralmente existem arquivos que são criados automaticamente durante um projeto, por exemplo arquivos de log. Tais arquivos sempre ficam aparecendo no segundo estágio e isso não é algo interessante. 
 
 Para impedir que alguns arquivos fiquem aparecendo ao visualizar o status, o git trabalha com o arquivo \textbf{.gitignore}. Esse arquivo é criado na raiz do projeto e, contém os nomes dos arquivos a serem ignorados, ver figura \ref{gitignore}. 
 
 \begin{figure}[h]
 	\caption{\label{gitignore}Ignorando arquivos}
 	\begin{center}
-		\includegraphics[width=1\linewidth]{gitignore}
+		\includegraphics[width=1\linewidth]{imagens/gitignore}
 	\end{center}
 	\legend{Fonte: (Do autor)}
 \end{figure}
 
-No exemplo da figura \ref{gitignore}, os arquivos \textit{idea.log} e \textit{test.aux}, não aparecerão mais no status. Todos os arquivos que terminarem com a extensão \textbf{.lot} ou apresentarem a extensão \textbf{.tar}, por exemplo \textit{ubuntuMobile.tar.xz}, também serão ignorados. 
+No exemplo da figura \ref{gitignore} os arquivos \textit{idea.log} e \textit{test.aux} não aparecerão mais no status. Todos os arquivos que terminarem com a extensão \textbf{.lot} ou apresentarem a extensão \textbf{.tar}, por exemplo \textit{ubuntuMobile.tar.xz}, também serão ignorados. 
 
-\textit{\textbf{Observação:}} Se um arquivo já tiver sido adicionado para o segundo estágio em algum momento do desenvolvimento, ele não será ignorado, mesmo que o nome do arquivo esteja presente no \textbf{.gitignore}. Se esse for o caso, o comando $$\verb|git rm --cached nomeDoArquivo|$$ irá retirar o arquivo do segundo estágio, ou seja, do monitoramento e, a partir disso ele passará a ser ignorado normalmente, caso queira retirar uma pasta completa, use o comando $$\verb|git rm -r --cached nomeDaPasta|$$ experimente ambos como prática.
+\textit{\textbf{Observação:}} Se um arquivo já tiver sido adicionado para o segundo estágio em algum momento do desenvolvimento ele não será ignorado mesmo que o nome do arquivo esteja presente no \textbf{.gitignore}. Se esse for o caso, o comando $$\verb|git rm --cached nomeDoArquivo|$$ irá retirar o arquivo do segundo estágio, ou seja, do monitoramento e a partir disso ele passará a ser ignorado normalmente, caso queira retirar uma pasta completa use o comando $$\verb|git rm -r --cached nomeDaPasta|$$ experimente ambos como prática.
 
 
 \subsection{Alterando o proxy \label{alterandoproxy}}
 
-Dependendo do local onde esteja trabalhando, é necessário uma configuração prévia do proxy para o git trabalhar com repositórios remotos. 
+Dependendo do local onde esteja trabalhando será necessário uma configuração prévia do proxy para o git trabalhar com repositórios remotos. 
 
 Os principais comandos para alteração do proxy são:
 
@@ -645,18 +535,18 @@ Os principais comandos para alteração do proxy são:
 
 \chapter{Trabalhando com repositório remoto}
 
-Na seção \ref{gitlab} falei brevemente sobre o \textit{gitLab}, Nesse capítulo iremos estudar como o \textit{git} se comporta trabalhando com repositórios remotos e faleremos sobre algumas características do \textit{gitLab}.
+Na seção \ref{gitlab} falei brevemente sobre o \textit{gitLab}. Nesse capítulo iremos estudar como o \textit{git} se comporta trabalhando com repositórios remotos e faleremos sobre algumas características do \textit{gitLab}.
 
-Antes de começar a usar os comandos das próximas seções, será necessário a criação de uma conta no \textit{gitLab}.
+Antes de começar a usar os comandos das próximas seções será necessário a criação de uma conta no \textit{gitLab}.
 
 \section{Criando seu primeiro repositório remoto}
 
-Com o \textit{gitLab} aberto siga as intruções da figura \ref{criandorep1} para iniciar o processo de criação do seu primeiro repositório. Em \textbf{\textit{1}} você irá abrir as opções para a criação do novo repositório. Em \textbf{\textit{2}} você irá selecionar \textit{New project}, a continuação segue nas figuras subsequentes.
+Com o \textit{gitLab} aberto siga as intruções da figura \ref{criandorep1} para iniciar o processo de criação do seu primeiro repositório remoto. Em \textbf{\textit{1}} você irá abrir as opções para a criação do novo repositório. Em \textbf{\textit{2}} você irá selecionar \textit{New project}, a continuação segue nas figuras subsequentes.
 
 \begin{figure}[h]
 	\caption{\label{criandorep1}Criando repositório - 1ª etapa}
 	\begin{center}
-		\includegraphics[width=1\linewidth]{criandorep1}
+		\includegraphics[width=1\linewidth]{imagens/criandorep1}
 	\end{center}
 	\legend{Fonte: (Do autor)}
 \end{figure}
@@ -666,7 +556,7 @@ Continuando na figura \ref{criandorep2}, em \textbf{\textit{1}} você irá adici
 \begin{figure}[h]
 	\caption{\label{criandorep2}Criando repositório - 2ª etapa}
 	\begin{center}
-		\includegraphics[width=1\linewidth]{criandorep2}
+		\includegraphics[width=1\linewidth]{imagens/criandorep2}
 	\end{center}
 	\legend{Fonte: (Do autor)}
 \end{figure}
@@ -678,7 +568,7 @@ Em \textbf{\textit{1}} na figura \ref{criandorep3}, você pode escolher o tipo d
 \begin{figure}[h]
 	\caption{\label{criandorep3}Criando repositório - 3ª etapa}
 	\begin{center}
-		\includegraphics[width=1\linewidth]{criandorep3}
+		\includegraphics[width=1\linewidth]{imagens/criandorep3}
 	\end{center}
 	\legend{Fonte: (Do autor)}
 \end{figure}
@@ -687,7 +577,7 @@ Se você observar o \textit{git} está sempre dando dicas. Com o \textit{gitLab}
 
 Na primeira etapa da figura \ref{criandorep4} você irá realizar a configuração inicial do git, se você vem seguindo a apostila desde os primeiros capítulos, esse processo de configuração já foi realizado na seção \ref{configinicial}. As etapas 2, 3 e 4, serão casos situacionais. 
 
-A etapa 2 deve ser usada quando não existe um repositório local. A primeira linha da etapa 2 irá criar um repositório local, a partir do repositório remoto, na pasta atual em que seu console se encontra. A segunda linha serve para acessar a pasta do repositório. A terceira linha (opcional) criará um arquivo em branco com o nome \textit{README.md}. A quarta linha como já devem saber adiciona o arquivo \textit{README.md} para o terceiro estágio. A quinta linha realizará o commit. E a última linha irá adionar o arquivo \textit{README.md} que foi criado localmente para o repositório remoto, ao \textit{branch master} remoto.
+A etapa 2 deve ser usada quando não existe um repositório local. A primeira linha da etapa 2 irá criar um repositório local, a partir do repositório remoto, na pasta atual em que seu console se encontra. A segunda linha serve para acessar a pasta do repositório. A terceira linha (opcional) criará um arquivo em branco com o nome \textit{README.md}. A quarta linha como já devem saber, adiciona o arquivo \textit{README.md} para o terceiro estágio. A quinta linha realizará o commit. E a última linha irá adicionar o arquivo \textit{README.md} que foi criado localmente para o repositório remoto, ao \textit{branch master} remoto.
 
 A etapa 3 deve ser utilizada quando você quer iniciar um repositório local e, em seguida fazer a conexão do repositório criado localmente com o repositório remoto. A primeira linha serve para acessar a pasta do repositório. A segunda é utlizada para criar o repositório local. A terceira linha será responsável em estabelecer a conexão entre o repositório local e o remoto. As linhas seguintes vocês já sabem suas devidas aplicações.
 
@@ -698,7 +588,7 @@ Lembre-se de verificar os tipos de protocolos que estão utilizando. Se tiver em
 \begin{figure}[h]
 	\caption{\label{criandorep4}Criando repositório - 4ª etapa}
 	\begin{center}
-		\includegraphics[width=1\linewidth]{criandorep4}
+		\includegraphics[width=1\linewidth]{imagens/criandorep4}
 	\end{center}
 	\legend{Fonte: (Do autor)}
 \end{figure}
@@ -717,7 +607,7 @@ Os principais comandos para realizar um push serão descritos a seguir:
 
 \section{Realizando seu primeiro clone}
 
-Realizar um clone é necessário quando você precisa duplicar um repositório remoto para sua máquina. Por exemplo, quando você deleta seu repositório local, ou quando você encontra um projeto opensource e quer utilizá-lo, ou ainda mesmo quando alguém rouba sua máquina e seu projeto está nele, mas nesse último caso só irá funcionar se você estiver usando o git corretamente.
+Realizar um clone é necessário quando você precisa duplicar um repositório remoto para sua máquina. Por exemplo, quando você deleta seu repositório local, ou quando você encontra um projeto opensource e quer utilizá-lo, ou ainda mesmo quando alguém rouba sua máquina e seu projeto está nele(piada interna), mas nesse último caso só irá funcionar se você estiver usando o git corretamente.
 
 Para fazer um clone é necessário apenas duas condições, o endereço do repositório e obviamente permissão para fazer tal processo. Se o projeto for público você pode fazer o clone do repositório sem pedir a permissão ao dono. Abaixo segue os dois principais comandos para realizar um clone:
 
@@ -802,7 +692,7 @@ Agora existem dois \textit{branches} com o mesmo arquivo, mas com conteúdos dif
 \begin{figure}[h]
 	\caption{\label{conflito1}Resolvendo conflito - parte 1}
 	\begin{center}
-		\includegraphics[width=1\linewidth]{conflito1}
+		\includegraphics[width=1\linewidth]{imagens/conflito1}
 	\end{center}
 	\legend{Fonte: (Do autor)}
 \end{figure}
@@ -812,7 +702,7 @@ O desenvolvedor A resolve fazer um \textit{merge} do \textit{branch} do desenvol
 \begin{figure}[h]
 	\caption{\label{conflito2}Resolvendo conflito - parte 2}
 	\begin{center}
-		\includegraphics[width=1\linewidth]{conflito2}
+		\includegraphics[width=1\linewidth]{imagens/conflito2}
 	\end{center}
 	\legend{Fonte: (Do autor)}
 \end{figure}
@@ -822,7 +712,7 @@ Se vocês observarem, o branch atual após o merge passou a ser \textit{exemplo0
 \begin{figure}[h]
 	\caption{\label{conflito3}Resolvendo conflito - parte 3}
 	\begin{center}
-		\includegraphics[width=1\linewidth]{conflito3}
+		\includegraphics[width=1\linewidth]{imagens/conflito3}
 	\end{center}
 	\legend{Fonte: (Do autor)}
 \end{figure}
@@ -832,7 +722,7 @@ O desenvolvedor A então edita o arquivo wtf e mantém o conteúdo do desenvolve
 \begin{figure}[H]
 	\caption{\label{conflito4}Resolvendo conflito - parte 4}
 	\begin{center}
-		\includegraphics[width=1\linewidth]{conflito4}
+		\includegraphics[width=1\linewidth]{imagens/conflito4}
 	\end{center}
 	\legend{Fonte: (Do autor)}
 \end{figure}
@@ -854,7 +744,7 @@ O comando para criar um repositório usando o \textit{git-flow} é quase idênti
 \begin{figure}[htb]
 	\caption{\label{initGitFlow}Iniciando repositório com o \textit{Git-flow}}
 	\begin{center}
-		\includegraphics[width=1\linewidth]{initGitFlow}
+		\includegraphics[width=1\linewidth]{imagens/initGitFlow}
 	\end{center}
 	\legend{Fonte: (Do autor)}
 \end{figure}
@@ -931,7 +821,7 @@ A figura \ref{comandos} abrange quase todos os comandos do \textit{git-flow} de 
 \begin{figure}[htb]
 	\caption{\label{comandos}Resumo dos comandos do \textit{Git-flow}}
 	\begin{center}
-		\includegraphics[width=1\linewidth]{comandos}
+		\includegraphics[width=1\linewidth]{imagens/comandos}
 	\end{center}
 	\legend{Fonte: (https://danielkummer.github.io/git-flow-cheatsheet/index.html)}
 \end{figure}
@@ -946,7 +836,7 @@ Essa apostila teve como objetivo plantar uma sementinha na mente de vocês sobre
 
   Existem diversas outras questões a serem abordadas e outras ferramentas. Agora depende apenas de você, pesquisar mais sobre o assunto e praticar.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \nocite{book}
 \nocite{gitlab}
