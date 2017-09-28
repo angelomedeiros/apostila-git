@@ -5,4 +5,129 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.6 }
 
+\bibitem[A successful Git branching model]{nvie}
+\abntrefinfo{A\ldots}{A\ldots}{a}
+{A successful Git branching model: nvie.
+Dispon{\'\i}vel em:
+  $<$http://nvie.com/posts/a-successful-git-branching-model/$>$. Acesso em: 29
+  ago. 2017.}
+
+\bibitem[A Visual Git Reference]{marklodato}
+\abntrefinfo{A\ldots}{A\ldots}{b}
+{A Visual Git Reference: marklodato.
+Dispon{\'\i}vel em:
+  $<$http://marklodato.github.io/visual-git-guide/index-en.html$>$. Acesso em:
+  26 ago. 2017.}
+
+\bibitem[Atalho para comandos \'uteis]{gitready}
+\abntrefinfo{Atalho\ldots}{ATALHO\ldots}{}
+{ATALHO para comandos \'uteis: git ready.
+Dispon{\'\i}vel em:
+  \url{http://pt-br.gitready.com/intermediario/2009/02/06/helpful-command-aliases.html}.
+  Acesso em: 26 ago. 2017.}
+
+\bibitem[CGTI]{cgti}
+\abntrefinfo{CGTI}{CGTI}{}
+{CGTI: Modelo desenvolvimento.
+Dispon{\'\i}vel em:
+  \url{http://git.mj.gov.br/CGTI/modelo-desenvolvimento/wikis/Manual-do-Usuario\#manual-do-usu-rio}.
+  Acesso em: 24 ago. 2017.}
+
+\bibitem[cheatsheet do git-flow]{danielkummer}
+\abntrefinfo{cheatsheet\ldots}{CHEATSHEET\ldots}{}
+{CHEATSHEET do git-flow: danielkummer.
+Dispon{\'\i}vel em:
+  \url{https://danielkummer.github.io/git-flow-cheatsheet/index.pt\_BR.html}.
+  Acesso em: 27 ago. 2017.}
+
+\bibitem[Como excluir um ramo(branch) do Git local e remoto?]{stackoverflow2}
+\abntrefinfo{Como\ldots}{COMO\ldots}{}
+{COMO excluir um ramo(branch) do Git local e remoto?: stackoverflow.
+Dispon{\'\i}vel em:
+  \url{https://pt.stackoverflow.com/questions/61428/como-excluir-um-ramobranch-do-git-local-e-remoto}.
+  Acesso em: 26 ago. 2017.}
+
+\bibitem[Ger\^encia de Configuração de Software]{devmedia1}
+\abntrefinfo{Ger\^encia\ldots}{GER\^ENCIA\ldots}{}
+{GER\^ENCIA de Configuração de Software: Devmedia.
+Dispon{\'\i}vel em:
+  \url{http://www.devmedia.com.br/gerencia-de-configuracao-de-software/9145}.
+  Acesso em: 29 ago. 2017.}
+
+\bibitem[Git]{book}
+\abntrefinfo{Git}{GIT}{}
+{GIT: Book.
+Dispon{\'\i}vel em: \url{https://git-scm.com/book/pt-br/v2}. Acesso em: 26 ago.
+  2017.}
+
+\bibitem[git - guia prático]{rogerdudler}
+\abntrefinfo{git\ldots}{GIT\ldots}{}
+{GIT - guia prático: rogerdudler.
+Dispon{\'\i}vel em:
+  \url{http://rogerdudler.github.io/git-guide/index.pt\_BR.html}. Acesso em: 28
+  ago. 2017.}
+
+\bibitem[Git Cheatsheet]{ndpsoftware}
+\abntrefinfo{Git\ldots}{GIT\ldots}{}
+{GIT Cheatsheet: ndpsoftware.
+Dispon{\'\i}vel em:
+  \url{http://ndpsoftware.com/git-cheatsheet.html\#loc=stash;}. Acesso em: 26
+  ago. 2017.}
+
+\bibitem[GitLab]{gitlab}
+\abntrefinfo{GitLab}{GITLAB}{a}
+{GITLAB: Documentação.
+Dispon{\'\i}vel em: \url{https://docs.gitlab.com/ee/README.html}. Acesso em: 25
+  ago. 2017.}
+
+\bibitem[GitLab]{wikiversity}
+\abntrefinfo{GitLab}{GITLAB}{b}
+{GITLAB: wikiversity.
+Dispon{\'\i}vel em: \url{https://pt.wikiversity.org/wiki/GitLab}. Acesso em: 28
+  ago. 2017.}
+
+\bibitem[juanplopes]{devmedia2}
+\abntrefinfo{juanplopes}{JUANPLOPES}{}
+{JUANPLOPES. \emph{Integração Contínua - Artigo .net Magazine 85}.
+Dispon{\'\i}vel em:
+  \url{http://www.devmedia.com.br/integracao-continua-artigo-net-magazine-85/21086}.
+  Acesso em: 29 ago. 2017.}
+
+\bibitem[Merging vs. Rebasing]{atlassian}
+\abntrefinfo{Merging\ldots}{MERGING\ldots}{}
+{MERGING vs. Rebasing: Atlassian.
+Dispon{\'\i}vel em:
+  \url{https://www.atlassian.com/git/tutorials/merging-vs-rebasing}. Acesso em:
+  26 ago. 2017.}
+
+\bibitem[Mota]{gitflow}
+\abntrefinfo{Mota}{MOTA}{}
+{MOTA, F.~J. \emph{Git Flow – Uma forma legal de organizar repositórios
+  git}.
+Dispon{\'\i}vel em:
+  \url{https://fjorgemota.com/git-flow-uma-forma-legal-de-organizar-repositorios-git/}.
+  Acesso em: 29 ago. 2017.}
+
+\bibitem[Semantic Versioning 2.0.0]{semver}
+\abntrefinfo{Semantic\ldots}{SEMANTIC\ldots}{}
+{SEMANTIC Versioning 2.0.0: semver.
+Dispon{\'\i}vel em: \url{http://semver.org/}. Acesso em: 29 ago. 2017.}
+
+\bibitem[TOP 5 REPOSITÓRIOS DE CÓDIGO FONTE GRÁTIS PARA O SEU
+  SOFTWARE]{tribo}
+\abntrefinfo{TOP\ldots}{TOP\ldots}{}
+{TOP 5 REPOSITÓRIOS DE CÓDIGO FONTE GRÁTIS PARA O SEU SOFTWARE: Tribo do
+  c.i.
+Dispon{\'\i}vel em:
+  \url{http://tribodoci.net/artigos/top-5-repositoros-de-codigo-fonte-gratis-para-o-seu-software/}.
+  Acesso em: 27 ago. 2017.}
+
+\bibitem[What's the difference between 'git merge' and 'git
+  rebase'?]{stackoverflow}
+\abntrefinfo{What's\ldots}{WHAT'S\ldots}{}
+{WHAT'S the difference between 'git merge' and 'git rebase'?: stackoverflow.
+Dispon{\'\i}vel em:
+  \url{https://stackoverflow.com/questions/16666089/whats-the-difference-between-git-merge-and-git-rebase/16666418\#16666418}.
+  Acesso em: 25 ago. 2017.}
+
 \end{thebibliography}

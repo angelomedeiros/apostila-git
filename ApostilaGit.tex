@@ -356,11 +356,11 @@ A primeira maneira deve ser usada quando você fez poucas alterações, e você 
 
 \chapter{Comandos mais usados no git}
 
-Nesse capítulo irei apresentar os principais comandos usados pelo git, e sempre estarei dando algumas dicas.
+Nesse capítulo irei apresentar os principais comandos usados pelo git e sempre estarei dando algumas dicas.
 
 \section{Visualizando o log}
 
-Até agora vocês aprenderam a visualizar em que estágio está sua aplicação, e a criar os \textit{commits}. Agora ensinarei como visualizar os \textit{commits} criados, o \textit{log}. O comando básico para visualizar um \textit{log} é o \textit{git log}(ver figura \ref{gitlog}), mas ele também pode vim com outras opções, ensinarei os mais usados.
+Até agora vocês aprenderam a visualizar em que estágio está sua aplicação e a criar os \textit{commits}. Agora ensinarei como visualizar os \textit{commits} criados, o \textit{log}. O comando básico para visualizar um \textit{log} é o \textit{git log}(ver figura \ref{gitlog}) mas ele também pode vim com outras opções, ensinarei os mais usados.
 
 \begin{figure}[h]
 	\caption{\label{gitlog}Visualizando o log básico}
@@ -370,7 +370,7 @@ Até agora vocês aprenderam a visualizar em que estágio está sua aplicação,
 	\legend{Fonte: (Do autor)}
 \end{figure}
 
-Irei adicionar dentro do arquivo helloWorld, o texto a seguir e fazer um novo commit. 
+Irei adicionar dentro do arquivo helloWorld o texto a seguir e, farei um novo commit. 
 
 \begin{verbatim}
           # Comando para imprimir na tela usando o python 2.x 
@@ -415,11 +415,11 @@ Abaixo seguem outros comandos para vocês experimentarem:
 	\legend{Fonte: (Do autor)}
 \end{figure}
 
-Na figura \ref{logp} as linhas que começam com um símbolo de mais(+) indica alg:wo que foi adicionado. Se começar com o símbolo de menos($-$) significa que algo foi retirado. Os números entre os símbolos de (@), indicam as posições das linhas, onde houveram alterações. Quando vocês estiverem praticando, isso ficará mais claro.
+Na figura \ref{logp} as linhas que começam com um símbolo de mais(+) indica algo que foi adicionado. Se começar com o símbolo de menos($-$) significa que algo foi retirado. Os números entre os símbolos de (@) indicam as posições das linhas onde houveram alterações. Quando vocês estiverem praticando isso ficará mais claro.
 
 \section{Criando branches \label{criandobranch}}
 
-Para criar um novo \textit{branch}, usamos o comando \textit{git checkout -b nomeBranch}. Onde \textit{nomeBranch} deve ser substituído pelo nome do \textit{branch} que você quer criar. Vale resaltar que um \textit{branch} é sempre criado baseado no \textit{branch} atual, ou seja, se você estiver no\textit{ branch master}, o novo \textit{branch} será um clone do \textit{branch master}, ver figura \ref{novobranch}.
+Para criar um novo \textit{branch} usamos o comando \textit{git checkout -b nomeBranch}. Onde \textit{nomeBranch} deve ser substituído pelo nome do \textit{branch} que você quer criar. Vale resaltar que um \textit{branch} é sempre criado baseado no \textit{branch} atual, ou seja, se você estiver no\textit{ branch master}, o novo \textit{branch} será um ``clone'' do \textit{branch master}, ver figura \ref{novobranch}.
 
 \begin{figure}[H]
 	\caption{\label{novobranch}Criando um branch}
@@ -429,24 +429,26 @@ Para criar um novo \textit{branch}, usamos o comando \textit{git checkout -b nom
 	\legend{Fonte: (Do autor)}
 \end{figure}
 
-Observe que quando você cria um \textit{branch}, o \textit{git} já inicia dentro do novo \textit{branch}. Irei listar abaixo os principais comandos relacionados a manipulação dos branches.
+Observe que quando você cria um \textit{branch} o \textit{git} já inicia dentro do novo \textit{branch}. Irei listar abaixo os principais comandos relacionados a manipulação dos branches.
 
 \begin{itemize}
 	\item \verb|git checkout nomeDoBranch|, troca do \textit{branch} atual para o \textit{branch nomeDoBranch};
 	\item \verb|git branch|, exibe os branches criados localmente;
 	\item \verb|git branch -a|, exibe os branches locais e os remotos(se você tiver trabalhano com branches remotos);
-	\item \verb|git branch -d nomeDoBranch|, deleta o \textit{branch nomeDoBranch}.
+	\item \verb|git remote -v|, exibe os branches remotos;
+	\item \verb|git branch -d nomeDoBranch|, deleta o \textit{branch nomeDoBranch};	
+	\item \verb|git branch -D nomeDoBranch|, força a exlusão do \textit{branch nomeDoBranch}.
 \end{itemize}
 
 \section{Mesclando branches}
 
-Mesclar branches na maioria das vezes é uma tarefa fácil. Porém algumas vezes ocorrem conflitos, esse assunto será tratado em uma seção mais na frente. Por enquanto, vamos se preocupar apenas em mesclar os \textit{branches}. São duas as principais maneiras de fazer a mesclagem usando o git, você pode usar o \textit{merge} ou o \textit{rebase}.
+Mesclar branches na maioria das vezes é uma tarefa fácil. Porém algumas vezes ocorrem conflitos, esse assunto será tratado em uma seção mais na frente. Por enquanto vamos se preocupar apenas em mesclar os \textit{branches}. São duas as principais maneiras de fazer a mesclagem usando o git, você pode usar o \textit{merge} ou o \textit{rebase}.
 
 \subsection{Mesclando usando o merge}
 
 O comando $$\verb|git merge funcionalidade1|$$ é usado para realizar o merge. Ele irá mesclar o \textit{branch funcionalidade1} com o \textit{branch atual}.
 
-A vantagem do merge é que ele preserva um histórico completo do seu projeto e, evita problemas quando está trabalhando em equipe(ver figura \ref{merge}).
+A vantagem do merge é que ele preserva um histórico completo do seu projeto e, evita problemas quando está trabalhando em um ambiente cooperativo(ver figura \ref{merge}).
 
 \begin{figure}[H]
 	\caption{\label{merge}Mesclando usando o merge}
@@ -472,7 +474,7 @@ O rebase é aconselhado apenas quando você está trabalhando localmente, a não
 
 \section{Voltando versões}
 
-Na minha opinião essa é a principal função do git, o processo de voltar versões. Existem diversas maneiras de fazer isso. Algumas são simples, mas não oferecem muita segurança para quem está iniciando nesse novo mundo do controle de versões. Outras envolvem mais etapas, porém você sentirá segurança realizando o processo,  o fato de ter mais etapas não o torna mais difícil.
+Na minha opinião essa é a principal função do git, o processo de voltar versões. Existem diversas maneiras de fazer isso. Algumas são simples, mas não oferecem muita segurança para quem está iniciando nesse novo mundo do controle de versões. Outras envolvem mais etapas, porém você sentirá segurança realizando o processo, o fato de ter mais etapas não o torna mais difícil.
 
 A maioria dos comandos para voltar versões necessitam do \textit{hash} do \textit{commit}, você pode encontrar esse \textit{hash} visualizando o \textit{log}. Não é necessário o hash completo, apenas o começo. A seguir estão os principais comandos:
 
@@ -490,9 +492,9 @@ A maioria dos comandos para voltar versões necessitam do \textit{hash} do \text
 	\legend{Fonte: (Do autor)}
 \end{figure}
 
-Entendo a figura \ref{voltando}. Veja que antes do \textit{reset} existia o arquivo \textit{helloWorld2}. No final do processo além de apagar o arquivo \textit{helloWorld2}, as alterações feitas no arquivo \textit{helloWorld} também foram desfeitas, apesar de não mostrar na figura. Essas mudanças aconteceram porquê o arquivo \textit{heloWorld2} foi criado no \textit{commit} eddcb203a, como pode ser observado nos comentários do \textit{commit} mostrado no \textit{log}, e o conteudo do arquivo \textit{helloWorld} ocorreu no \textit{commit} 2bf2040e30. Por isso a importância de documentar corretamenta os \textit{commits}.
+Entendendo a figura \ref{voltando}. Veja que antes do \textit{reset} existia o arquivo \textit{helloWorld2}. No final do processo além de apagar o arquivo \textit{helloWorld2}, as alterações feitas no arquivo \textit{helloWorld} também foram desfeitas apesar de não mostrar na figura. Essas mudanças aconteceram porquê o arquivo \textit{heloWorld2} foi criado no \textit{commit} eddcb203a como pode ser observado nos comentários do \textit{commit} mostrado no \textit{log} e, o conteudo do arquivo \textit{helloWorld} ocorreu no \textit{commit} 2bf2040e30. Por isso a importância de documentar corretamente os \textit{commits}.
 
-Você pode combinar diversas técnicas para voltar versões usando o git. Quando forem ganhando mais segurança do que estão fazendo, o processo de voltar versões irá se tornar algo natural. Por exemplo, você pode criar um novo \textit{branch} a partir do qual queira voltar uma versão, e depois mesclar esse novo \textit{branch} com o \textit{branch} principal. Depende apenas da sua engenhosidade, então façam diversos experimentos usando o git para adquirir experiência.
+Você pode combinar diversas técnicas para voltar versões usando o git. Quando forem ganhando mais segurança no que estão fazendo, o processo de voltar versões irá se tornar algo natural. Por exemplo, você pode criar um novo \textit{branch} a partir do qual queira voltar uma versão, e depois mesclar esse novo \textit{branch} com o \textit{branch} principal. Depende apenas da sua engenhosidade, então façam diversos testes usando o git para adquirir experiência.
 
 \section{Algumas dicas}
 
@@ -500,7 +502,7 @@ Nas seções seguintes serão descritas algumas dicas.
 
 \subsection{Ignorando arquivos com o Git}
 
-Geralmente tem arquivos que são criados automaticamente durante um projeto, por exemplo arquivos de log. Tais arquivos sempre ficam aparecendo no segundo estágio e isso não é algo interessante. 
+Geralmente existem arquivos que são criados automaticamente durante um projeto, por exemplo arquivos de log. Tais arquivos sempre ficam aparecendo no segundo estágio e isso não é algo interessante. 
 
 Para impedir que alguns arquivos fiquem aparecendo ao visualizar o status, o git trabalha com o arquivo \textbf{.gitignore}. Esse arquivo é criado na raiz do projeto e, contém os nomes dos arquivos a serem ignorados, ver figura \ref{gitignore}. 
 
@@ -512,14 +514,14 @@ Para impedir que alguns arquivos fiquem aparecendo ao visualizar o status, o git
 	\legend{Fonte: (Do autor)}
 \end{figure}
 
-No exemplo da figura \ref{gitignore}, os arquivos \textit{idea.log} e \textit{test.aux}, não aparecerão mais no status. Todos os arquivos que terminarem com a extensão \textbf{.lot} ou apresentarem a extensão \textbf{.tar}, por exemplo \textit{ubuntuMobile.tar.xz}, também serão ignorados. 
+No exemplo da figura \ref{gitignore} os arquivos \textit{idea.log} e \textit{test.aux} não aparecerão mais no status. Todos os arquivos que terminarem com a extensão \textbf{.lot} ou apresentarem a extensão \textbf{.tar}, por exemplo \textit{ubuntuMobile.tar.xz}, também serão ignorados. 
 
-\textit{\textbf{Observação:}} Se um arquivo já tiver sido adicionado para o segundo estágio em algum momento do desenvolvimento, ele não será ignorado, mesmo que o nome do arquivo esteja presente no \textbf{.gitignore}. Se esse for o caso, o comando $$\verb|git rm --cached nomeDoArquivo|$$ irá retirar o arquivo do segundo estágio, ou seja, do monitoramento e, a partir disso ele passará a ser ignorado normalmente, caso queira retirar uma pasta completa, use o comando $$\verb|git rm -r --cached nomeDaPasta|$$ experimente ambos como prática.
+\textit{\textbf{Observação:}} Se um arquivo já tiver sido adicionado para o segundo estágio em algum momento do desenvolvimento ele não será ignorado mesmo que o nome do arquivo esteja presente no \textbf{.gitignore}. Se esse for o caso, o comando $$\verb|git rm --cached nomeDoArquivo|$$ irá retirar o arquivo do segundo estágio, ou seja, do monitoramento e a partir disso ele passará a ser ignorado normalmente, caso queira retirar uma pasta completa use o comando $$\verb|git rm -r --cached nomeDaPasta|$$ experimente ambos como prática.
 
 
 \subsection{Alterando o proxy \label{alterandoproxy}}
 
-Dependendo do local onde esteja trabalhando, é necessário uma configuração prévia do proxy para o git trabalhar com repositórios remotos. 
+Dependendo do local onde esteja trabalhando será necessário uma configuração prévia do proxy para o git trabalhar com repositórios remotos. 
 
 Os principais comandos para alteração do proxy são:
 
@@ -533,13 +535,13 @@ Os principais comandos para alteração do proxy são:
 
 \chapter{Trabalhando com repositório remoto}
 
-Na seção \ref{gitlab} falei brevemente sobre o \textit{gitLab}, Nesse capítulo iremos estudar como o \textit{git} se comporta trabalhando com repositórios remotos e faleremos sobre algumas características do \textit{gitLab}.
+Na seção \ref{gitlab} falei brevemente sobre o \textit{gitLab}. Nesse capítulo iremos estudar como o \textit{git} se comporta trabalhando com repositórios remotos e faleremos sobre algumas características do \textit{gitLab}.
 
-Antes de começar a usar os comandos das próximas seções, será necessário a criação de uma conta no \textit{gitLab}.
+Antes de começar a usar os comandos das próximas seções será necessário a criação de uma conta no \textit{gitLab}.
 
 \section{Criando seu primeiro repositório remoto}
 
-Com o \textit{gitLab} aberto siga as intruções da figura \ref{criandorep1} para iniciar o processo de criação do seu primeiro repositório. Em \textbf{\textit{1}} você irá abrir as opções para a criação do novo repositório. Em \textbf{\textit{2}} você irá selecionar \textit{New project}, a continuação segue nas figuras subsequentes.
+Com o \textit{gitLab} aberto siga as intruções da figura \ref{criandorep1} para iniciar o processo de criação do seu primeiro repositório remoto. Em \textbf{\textit{1}} você irá abrir as opções para a criação do novo repositório. Em \textbf{\textit{2}} você irá selecionar \textit{New project}, a continuação segue nas figuras subsequentes.
 
 \begin{figure}[h]
 	\caption{\label{criandorep1}Criando repositório - 1ª etapa}
@@ -575,7 +577,7 @@ Se você observar o \textit{git} está sempre dando dicas. Com o \textit{gitLab}
 
 Na primeira etapa da figura \ref{criandorep4} você irá realizar a configuração inicial do git, se você vem seguindo a apostila desde os primeiros capítulos, esse processo de configuração já foi realizado na seção \ref{configinicial}. As etapas 2, 3 e 4, serão casos situacionais. 
 
-A etapa 2 deve ser usada quando não existe um repositório local. A primeira linha da etapa 2 irá criar um repositório local, a partir do repositório remoto, na pasta atual em que seu console se encontra. A segunda linha serve para acessar a pasta do repositório. A terceira linha (opcional) criará um arquivo em branco com o nome \textit{README.md}. A quarta linha como já devem saber adiciona o arquivo \textit{README.md} para o terceiro estágio. A quinta linha realizará o commit. E a última linha irá adionar o arquivo \textit{README.md} que foi criado localmente para o repositório remoto, ao \textit{branch master} remoto.
+A etapa 2 deve ser usada quando não existe um repositório local. A primeira linha da etapa 2 irá criar um repositório local, a partir do repositório remoto, na pasta atual em que seu console se encontra. A segunda linha serve para acessar a pasta do repositório. A terceira linha (opcional) criará um arquivo em branco com o nome \textit{README.md}. A quarta linha como já devem saber, adiciona o arquivo \textit{README.md} para o terceiro estágio. A quinta linha realizará o commit. E a última linha irá adicionar o arquivo \textit{README.md} que foi criado localmente para o repositório remoto, ao \textit{branch master} remoto.
 
 A etapa 3 deve ser utilizada quando você quer iniciar um repositório local e, em seguida fazer a conexão do repositório criado localmente com o repositório remoto. A primeira linha serve para acessar a pasta do repositório. A segunda é utlizada para criar o repositório local. A terceira linha será responsável em estabelecer a conexão entre o repositório local e o remoto. As linhas seguintes vocês já sabem suas devidas aplicações.
 
@@ -605,7 +607,7 @@ Os principais comandos para realizar um push serão descritos a seguir:
 
 \section{Realizando seu primeiro clone}
 
-Realizar um clone é necessário quando você precisa duplicar um repositório remoto para sua máquina. Por exemplo, quando você deleta seu repositório local, ou quando você encontra um projeto opensource e quer utilizá-lo, ou ainda mesmo quando alguém rouba sua máquina e seu projeto está nele, mas nesse último caso só irá funcionar se você estiver usando o git corretamente.
+Realizar um clone é necessário quando você precisa duplicar um repositório remoto para sua máquina. Por exemplo, quando você deleta seu repositório local, ou quando você encontra um projeto opensource e quer utilizá-lo, ou ainda mesmo quando alguém rouba sua máquina e seu projeto está nele(piada interna), mas nesse último caso só irá funcionar se você estiver usando o git corretamente.
 
 Para fazer um clone é necessário apenas duas condições, o endereço do repositório e obviamente permissão para fazer tal processo. Se o projeto for público você pode fazer o clone do repositório sem pedir a permissão ao dono. Abaixo segue os dois principais comandos para realizar um clone:
 
@@ -836,26 +838,26 @@ Essa apostila teve como objetivo plantar uma sementinha na mente de vocês sobre
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%\nocite{book}
-%\nocite{gitlab}
-%\nocite{gitflow}
-%\nocite{semver}
-%\nocite{gitready}
-%\nocite{stackoverflow}
-%\nocite{atlassian}
-%\nocite{ndpsoftware}
-%\nocite{rogerdudler}
-%\nocite{danielkummer}
-%\nocite{nvie}
-%\nocite{cgti}
-%\nocite{moura}
-%\nocite{wikiversity}
-%\nocite{stackoverflow2}
-%\nocite{tribo}
-%\nocite{devmedia1}
-%\nocite{devmedia2}
-%\nocite{marklodato}
+\nocite{book}
+\nocite{gitlab}
+\nocite{gitflow}
+\nocite{semver}
+\nocite{gitready}
+\nocite{stackoverflow}
+\nocite{atlassian}
+\nocite{ndpsoftware}
+\nocite{rogerdudler}
+\nocite{danielkummer}
+\nocite{nvie}
+\nocite{cgti}
+\nocite{moura}
+\nocite{wikiversity}
+\nocite{stackoverflow2}
+\nocite{tribo}
+\nocite{devmedia1}
+\nocite{devmedia2}
+\nocite{marklodato}
 
-%\bibliography{biblio}
+\bibliography{biblio}
 	 		
 \end{document}

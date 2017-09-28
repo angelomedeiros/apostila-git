@@ -1,29 +1,29 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: ApostilaGit.aux
 The style file: abntex2-alf.bst
-I found no \bibdata command---while reading file ApostilaGit.aux
-Warning--I didn't find a database entry for "abnt-url-package=url"
-Warning--I didn't find a database entry for "book"
-Warning--I didn't find a database entry for "gitlab"
-Warning--I didn't find a database entry for "gitflow"
-Warning--I didn't find a database entry for "semver"
-Warning--I didn't find a database entry for "gitready"
-Warning--I didn't find a database entry for "stackoverflow"
-Warning--I didn't find a database entry for "atlassian"
-Warning--I didn't find a database entry for "ndpsoftware"
-Warning--I didn't find a database entry for "rogerdudler"
-Warning--I didn't find a database entry for "danielkummer"
-Warning--I didn't find a database entry for "nvie"
-Warning--I didn't find a database entry for "cgti"
+Database file #1: abntex2-options.bib
+Database file #2: biblio.bib
 Warning--I didn't find a database entry for "moura"
-Warning--I didn't find a database entry for "wikiversity"
-Warning--I didn't find a database entry for "stackoverflow2"
-Warning--I didn't find a database entry for "tribo"
-Warning--I didn't find a database entry for "devmedia1"
-Warning--I didn't find a database entry for "devmedia2"
-Warning--I didn't find a database entry for "marklodato"
+Warning--campo year vazio ou faltando em nvie
+Warning--campo year vazio ou faltando em marklodato
+Warning--campo year vazio ou faltando em gitready
+Warning--campo year vazio ou faltando em cgti
+Warning--campo year vazio ou faltando em danielkummer
+Warning--campo year vazio ou faltando em stackoverflow2
+Warning--campo year vazio ou faltando em devmedia1
+Warning--campo year vazio ou faltando em book
+Warning--campo year vazio ou faltando em rogerdudler
+Warning--campo year vazio ou faltando em ndpsoftware
+Warning--campo year vazio ou faltando em gitlab
+Warning--campo year vazio ou faltando em wikiversity
+Warning--campo year vazio ou faltando em devmedia2
+Warning--campo year vazio ou faltando em atlassian
+Warning--campo year vazio ou faltando em gitflow
+Warning--campo year vazio ou faltando em semver
+Warning--campo year vazio ou faltando em tribo
+Warning--campo year vazio ou faltando em stackoverflow
 +---------------------------------------------------------+
 | Estilo bibliográfico abntex2-alf.bst versão v-1.9.6           |
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-(There was 1 error message)
+(There were 19 warnings)
