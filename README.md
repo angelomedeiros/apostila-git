@@ -64,38 +64,18 @@ seguro.
 		</ol>
 </ol>
 
-# Apostila sobre git, gitLab e git-flow
+## Apostila sobre git, gitLab e git-flow
 <a href="https://github.com/angelomedeiros/apostila-git/raw/develop/ApostilaGit.pdf">Download da apostila</a>
 
+### Como a apostila foi escrita?
 
-<!--
-<strong>Angelo Medeiros</strong>
+A apostila foi escrita utilizando o LaTeX(conjunto de macros para diagramação de textos).
 
-<em>Angelo Medeiros</em>
-<del>Strike through this text.</del>
-<del>Strike through this text.</del>
+## Encontrou algum erro ou quer contribuir?
 
-<ol>
-  <li>Lorem ipsum dolor sit amet</li>
-  <li>Consectetur adipiscing elit</li>
-  <li>Integer molestie lorem at massa</li>
-  <li>Facilisis in pretium nisl aliquet</li>
-  <li>Nulla volutpat aliquam velit
-    <ul>
-      <li>Phasellus iaculis neque</li>
-      <li>Purus sodales ultricies</li>
-      <li>Vestibulum laoreet porttitor sem</li>
-      <li>Ac tristique libero volutpat at</li>
-    </ul>
-  </li>
-  <li>Faucibus porta lacus fringilla vel</li>
-  <li>Aenean sit amet erat nunc</li>
-  <li>Eget porttitor lorem</li>
-</ol>
+Para reportar um erro crie um novo _issue_ e para contribuir faça um _fork_(solicite pull request depois). Se você ainda não têm experiência com o gitHub  envie um email para angeloprogrammer@gmail.com.
 
-```
-<div> Hello World! </div>
-```
+## Contato
 
--->
+Qualquer dúvida envie um email para angeloprogrammer@gmail.com.
 
