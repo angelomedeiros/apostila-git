@@ -5,64 +5,52 @@ o controle de versão, suas vantagens e como ele tornará seu desenvolvimento ma
 seguro.
 
 ## Sumário
-<ol>
-	<li>Antes de tudo, o que é controle de versão?</li>
-		<ol>
-			<li>O Git</li>
-			<li>O GitLab</li>
-			<li>O Git-flow</li>
-		</ol>
-	<li>A estratégia de ramificação</li>
-		<ol>
-			<li>Os branches
-				<ol>
-					<li>O branch master</li>
-					<li>O branch develop</li>
-					<li>O branch feature</li>
-					<li>O branch release</li>
-					<li>Os branches hotfixes e bugfixes</li>
-				</ol>
-			</li>
-		</ol>
-	<li>Primeiros passos com o git</li>
-		<ol>
-			<li>Configuração inicial</li>
-		</ol>
-	<li>Os 3 estágios</li>
-		<ol>
-			<li>Criando um repositório</li>
-			<li>O primeiro estágio</li>
-			<li>O segundo estágio</li>
-			<li>O terceiro estágio</li>
-		</ol>
-	<li>Comandos mais usados no git</li>
-		<ol>
-			<li>Visualizando o log</li>
-			<li>Criando branches</li>
-			<li>Mesclando branches</li>
-			<li>Voltando versões</li>
-			<li>Algumas dicas</li>
-		</ol>
-	<li>Trabalhando com repositório remoto</li>
-		<ol>
-			<li>Criando seu primeiro repositório remoto</li>
-			<li>Realizando seu primeiro push</li>
-			<li>Realizando seu primeiro clone</li>
-			<li>Criando um branch a partir do repositório remoto</li>
-			<li>Realizando seu primeiro pull</li>
-			<li>Trabalhando com tags</li>
-			<li>Resolvendo conflitos</li>
-		</ol>
-	<li>Trabalhando com o git-flow</li>
-		<ol>
-			<li>Criando o repositório usando o git-flow</li>
-			<li>Criando features</li>
-			<li>Criando releases</li>
-			<li>Criando hotfixes</li>
-			<li>Criando bugfixes</li>
-			<li>Resumo dos comandos do git-flow</li>
-		</ol>
-</ol>
+
+1. ANTES DE TUDO, O QUE É CONTROLE DE VERSÃO?
+	1. O Git
+	1. O GitLab
+	1. O Git-flow
+1. A ESTRATÉGIA DE RAMIFICAÇÃO
+	1. Os branches
+	 	1. O branch master
+	 	1. O branch develop
+	 	1. O branch feature
+	 	1. O branch release
+	 	1. Os branches hotfixes e bugfixes
+1. PRIMEIROS PASSOS COM O GIT
+	1. Configuração inicial
+1. OS 3 ESTÁGIOS
+	1. Criando um repositório
+	1. O primeiro estágio
+	1. O segundo estágio
+	1. O terceiro estágio
+1. COMANDOS MAIS USADOS NO GIT
+	1. Visualizando o log
+	1. Criando branches
+	1. Mesclando branches
+	 	1. Mesclando usando o merge
+	 	1. Mesclando usando o rebase
+	1. Voltando versões
+	1. Algumas dicas
+	 	1. Ignorando arquivos com o Git
+	 	1. Alterando o proxy
+1. TRABALHANDO COM REPOSITÓRIO REMOTO
+	1. Criando seu primeiro repositório remoto
+	1. Realizando seu primeiro push
+	1. Realizando seu primeiro clone
+	1. Criando um branch a partir do repositório remoto
+	1. Realizando seu primeiro pull
+	1. Trabalhando com tags
+	 	1. Versionamento Semântico
+	 	1. Criando tags com o git
+	1. Resolvendo conflitos
+1. TRABALHANDO COM O GIT-FLOW
+	1. Criando o repositório usando o git-flow
+	1. Criando features
+	1. Criando releases
+	1. Criando hotfixes
+	1. Criando bugfixes
+	1. Resumo dos comandos do git-flow
 
 ## Apostila sobre git, gitLab e git-flow
 <a href="https://github.com/angelomedeiros/apostila-git/raw/develop/ApostilaGit.pdf">Download da apostila</a>
